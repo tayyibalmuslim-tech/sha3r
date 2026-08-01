@@ -1,0 +1,2505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تحليل أكاديمي لقصيدة إنّي أتتني لسانٌ لا أُسرُّ بها — أعشى باهلة</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+
+  :root {
+    --parchment: #FAF6EE;
+    --parchment-deep: #F0E8D8;
+    --ink: #2C1810;
+    --ink-light: #5C4033;
+    --gold: #B8860B;
+    --gold-light: #D4A843;
+    --gold-faint: rgba(184, 134, 11, 0.08);
+    --rust: #8B3A2F;
+    --teal: #1A6B5A;
+    --teal-light: #E8F4F0;
+    --purple: #5B4B8A;
+    --purple-light: #F2EFFA;
+    --blue: #2C4B7C;
+    --blue-light: #EAF0FA;
+    --border: #D4C5A9;
+    --shadow: rgba(44, 24, 16, 0.06);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+    background: var(--parchment);
+    color: var(--ink);
+    line-height: 2;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === HEADER === */
+  .hero {
+    background: linear-gradient(170deg, #2C1810 0%, #3D2418 40%, #4A2E1C 100%);
+    color: var(--parchment);
+    padding: 70px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 40px,
+      rgba(184, 134, 11, 0.03) 40px, rgba(184, 134, 11, 0.03) 41px
+    );
+    pointer-events: none;
+  }
+
+  .hero-ornament { font-size: 26px; color: var(--gold); letter-spacing: 12px; margin-bottom: 22px; opacity: 0.7; }
+
+  .hero h1 {
+    font-family: 'Amiri', serif;
+    font-size: clamp(24px, 4.2vw, 38px);
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .hero .subtitle {
+    font-size: 18px;
+    color: var(--gold-light);
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .hero .academic-note {
+    font-size: 14px;
+    color: var(--parchment-deep);
+    opacity: 0.85;
+    max-width: 640px;
+    margin: 18px auto 0;
+    line-height: 1.9;
+  }
+
+  .meta-grid { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 26px; }
+  .meta-item { text-align: center; }
+  .meta-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 4px; }
+  .meta-value { font-size: 15px; color: var(--parchment-deep); }
+
+  /* === INTRO / MUQADDIMAH ACADEMIC SECTIONS === */
+  .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+  .academic-block {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    margin: 36px 0;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+
+  .academic-block h2 {
+    font-family: 'Amiri', serif;
+    font-size: 24px;
+    color: var(--rust);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold-faint);
+  }
+
+  .academic-block h3 {
+    font-family: 'Amiri', serif;
+    font-size: 19px;
+    color: var(--teal);
+    margin: 20px 0 10px;
+  }
+
+  .academic-block p { color: var(--ink-light); line-height: 2.15; margin-bottom: 12px; text-align: justify; }
+  .academic-block ul, .academic-block ol { color: var(--ink-light); line-height: 2.1; margin: 10px 0 10px 0; padding-right: 28px; }
+  .academic-block li { margin-bottom: 8px; }
+
+  .source-tag {
+    display: inline-block;
+    font-size: 12px;
+    background: var(--gold-faint);
+    color: var(--rust);
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-inline-start: 6px;
+  }
+
+  /* === TOOLBAR === */
+  .toolbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250, 246, 238, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;
+  }
+
+  .toolbar button {
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 14px; padding: 6px 18px;
+    border: 1px solid var(--border); border-radius: 20px;
+    background: #fff; color: var(--ink-light); cursor: pointer;
+    transition: all 0.2s;
+  }
+  .toolbar button:hover { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+  /* === SECTION DIVIDER === */
+  .section-divider {
+    text-align: center;
+    margin: 48px 0 24px;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 10px;
+    opacity: 0.6;
+  }
+
+  .movement-header {
+    text-align: center;
+    margin: 56px 0 20px;
+  }
+  .movement-header .badge {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--gold-light);
+    padding: 8px 24px;
+    border-radius: 24px;
+    font-family: 'Amiri', serif;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  .movement-header p {
+    color: var(--ink-light);
+    font-size: 14px;
+    max-width: 600px;
+    margin: 6px auto 0;
+    line-height: 1.8;
+  }
+
+  /* === VERSE CARD === */
+  .verse-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px var(--shadow);
+    transition: box-shadow 0.3s ease;
+  }
+  .verse-card:hover { box-shadow: 0 4px 24px rgba(44, 24, 16, 0.1); }
+
+  .verse-header {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 26px; cursor: pointer; user-select: none;
+    background: linear-gradient(90deg, rgba(184,134,11,0.04), transparent);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+  .verse-header:hover { background: linear-gradient(90deg, rgba(184,134,11,0.08), transparent); }
+
+  .verse-number {
+    width: 38px; height: 38px; background: var(--ink); color: var(--gold-light);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 700; flex-shrink: 0; font-family: 'Amiri', serif;
+  }
+
+  .verse-text {
+    flex: 1; font-family: 'Amiri', serif; font-size: 20px; line-height: 1.9; color: var(--ink);
+  }
+  .verse-text .hemistich-separator { display: inline-block; width: 22px; text-align: center; color: var(--gold); font-size: 13px; }
+
+  .toggle-icon {
+    width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s ease, border-color 0.3s; flex-shrink: 0;
+    color: var(--ink-light); font-size: 13px;
+  }
+  .verse-card.open .toggle-icon { transform: rotate(180deg); border-color: var(--gold); color: var(--gold); }
+
+  .verse-body { display: none; padding: 26px; }
+  .verse-card.open .verse-body { display: block; }
+
+  .analysis-section { margin-bottom: 24px; }
+  .analysis-section:last-child { margin-bottom: 0; }
+
+  .section-title {
+    font-family: 'Amiri', serif; font-size: 17px; font-weight: 700; color: var(--rust);
+    margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid var(--gold-faint);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title .icon { font-size: 15px; }
+  .analysis-section p { color: var(--ink-light); line-height: 2.1; margin-bottom: 8px; text-align: justify; }
+
+  .vocab-item { padding: 8px 16px; margin-bottom: 6px; background: var(--gold-faint); border-radius: 6px; border-right: 3px solid var(--gold); }
+  .vocab-term { font-weight: 700; color: var(--ink); font-family: 'Amiri', serif; }
+
+  .irab-item { padding: 6px 16px; margin-bottom: 4px; background: var(--teal-light); border-radius: 6px; border-right: 3px solid var(--teal); font-size: 15px; }
+  .irab-term { font-weight: 700; color: var(--teal); font-family: 'Amiri', serif; }
+
+  .balagha-item { padding: 10px 16px; margin-bottom: 8px; background: #FFF8F0; border-radius: 6px; border-right: 3px solid var(--rust); }
+  .balagha-term { font-weight: 700; color: var(--rust); font-family: 'Amiri', serif; }
+
+  .context-box { padding: 16px 20px; background: linear-gradient(135deg, var(--gold-faint), rgba(26,107,90,0.04)); border-radius: 8px; border: 1px solid var(--border); }
+  .music-box { padding: 16px 20px; background: var(--purple-light); border-radius: 8px; border-right: 3px solid var(--purple); }
+
+  .scholarly-item { padding: 10px 16px; margin-bottom: 8px; background: #F0F5FF; border-radius: 6px; border-right: 3px solid #4169A0; font-size: 15px; }
+  .scholarly-term { font-weight: 700; color: #4169A0; font-family: 'Amiri', serif; }
+
+  /* === SUMMARY === */
+  .summary-section { background: var(--ink); color: var(--parchment); padding: 56px 40px; margin-top: 48px; }
+  .summary-section h2 { font-family: 'Amiri', serif; font-size: 26px; color: var(--gold-light); text-align: center; margin-bottom: 36px; }
+  .summary-content { max-width: 820px; margin: 0 auto; }
+
+  .evolution-step { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+  .evolution-badge {
+    background: var(--gold); color: var(--ink); padding: 4px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0; margin-top: 8px;
+  }
+  .evolution-text { color: var(--parchment-deep); line-height: 2; }
+  .evolution-text strong { color: var(--gold-light); }
+
+  .summary-paragraph { margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(184,134,11,0.2); }
+  .summary-paragraph h3 { font-family: 'Amiri', serif; font-size: 20px; color: var(--gold-light); margin-bottom: 14px; }
+  .summary-paragraph p { color: var(--parchment-deep); line-height: 2.2; text-align: justify; }
+
+  .biblio-list { list-style: none; padding: 0; }
+  .biblio-list li {
+    color: var(--parchment-deep); line-height: 1.9; margin-bottom: 12px;
+    padding-right: 20px; border-right: 2px solid var(--gold);
+    font-size: 14.5px;
+  }
+
+  footer { text-align: center; padding: 28px; color: var(--ink-light); font-size: 13px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 44px 18px 36px; }
+    .meta-grid { gap: 18px; }
+    .verse-header { padding: 13px 14px; gap: 9px; }
+    .verse-text { font-size: 17px; }
+    .verse-body { padding: 15px; }
+    .toolbar { gap: 6px; }
+    .toolbar button { font-size: 12px; padding: 5px 11px; }
+    .summary-section { padding: 36px 18px; }
+    .academic-block { padding: 20px; }
+  }
+
+  @media print {
+    .toolbar { display: none; }
+    .verse-body { display: block !important; }
+    .toggle-icon { display: none; }
+    .hero { background: #333 !important; -webkit-print-color-adjust: exact; }
+  }
+
+  /* ============================================================ */
+  /* === الملحق التحليلي المكمّل: أنماط الأقسام التسعة الإضافية === */
+  /* ============================================================ */
+
+  .appendix-divider {
+    text-align: center; margin: 60px 0 30px; position: relative;
+  }
+  .appendix-divider::before {
+    content: ''; position: absolute; top: 50%; right: 0; left: 0; height: 1px;
+    background: var(--border); z-index: 0;
+  }
+  .appendix-divider span {
+    position: relative; z-index: 1; background: var(--parchment); padding: 0 24px;
+    color: var(--gold); font-family: 'Amiri', serif; font-size: 15px; letter-spacing: 3px;
+  }
+
+  .appendix-intro {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px;
+    padding: 32px; margin-bottom: 8px; box-shadow: 0 2px 12px var(--shadow);
+  }
+  .appendix-intro h2 { font-family:'Amiri',serif; font-size: 24px; color: var(--rust); margin-bottom: 14px; }
+  .appendix-intro p { color: var(--ink-light); line-height: 2.15; text-align: justify; }
+
+  .nav-map {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin: 24px 0 8px;
+  }
+  .nav-map a {
+    display: block; text-decoration: none; background: #fff; border: 1px solid var(--border);
+    border-radius: 8px; padding: 14px 16px; color: var(--ink); font-size: 13.5px;
+    box-shadow: 0 2px 8px var(--shadow); transition: 0.2s;
+  }
+  .nav-map a:hover { border-color: var(--gold); box-shadow: 0 4px 16px var(--shadow); }
+  .nav-map .num { color: var(--gold); font-weight: 700; font-family:'Amiri',serif; margin-left:6px; }
+  @media (max-width: 720px) { .nav-map { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 460px) { .nav-map { grid-template-columns: 1fr; } }
+
+  .module {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 36px;
+    margin: 32px 0;
+    box-shadow: 0 2px 12px var(--shadow);
+    scroll-margin-top: 70px;
+  }
+  .module-eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase;
+    margin-bottom: 10px; font-weight: 600;
+  }
+  .module-eyebrow .n { background: var(--ink); color: var(--gold-light); width: 26px; height: 26px;
+    border-radius: 50%; display:flex; align-items:center; justify-content:center; font-size: 13px; letter-spacing:0; flex-shrink:0; }
+  .module h2 {
+    font-family: 'Amiri', serif;
+    font-size: 25px;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .module .module-sub {
+    color: var(--ink-light); font-size: 14.5px; font-style: italic; margin-bottom: 22px;
+    padding-bottom: 18px; border-bottom: 2px solid var(--gold-faint);
+  }
+  .module h3 {
+    font-family: 'Amiri', serif; font-size: 19px; color: var(--teal); margin: 26px 0 12px;
+  }
+  .module p { color: var(--ink-light); line-height: 2.15; margin-bottom: 12px; text-align: justify; }
+  .module ul, .module ol { color: var(--ink-light); line-height: 2.1; margin: 10px 0 14px; padding-right: 28px; }
+  .module li { margin-bottom: 8px; }
+
+  .rule-badge {
+    display:inline-block; font-size:11.5px; color:var(--blue); background:var(--blue-light);
+    border-radius: 10px; padding:2px 10px; margin-inline-start:6px; font-family:'Noto Naskh Arabic',serif;
+  }
+
+  .vchip {
+    display:inline-block; background: var(--ink); color: var(--gold-light); border-radius: 6px;
+    padding: 1px 9px; font-size: 13px; font-family:'Amiri',serif; margin-inline-end: 4px;
+  }
+
+  .item-box { padding: 12px 18px; margin-bottom: 10px; border-radius: 7px; }
+  .item-term { font-weight: 700; font-family: 'Amiri', serif; display:block; margin-bottom:3px; }
+
+  .box-teal   { background: var(--teal-light); border-right: 3px solid var(--teal); }
+  .box-teal .item-term { color: var(--teal); }
+  .box-rust   { background: #FFF8F0; border-right: 3px solid var(--rust); }
+  .box-rust .item-term { color: var(--rust); }
+  .box-gold   { background: var(--gold-faint); border-right: 3px solid var(--gold); }
+  .box-gold .item-term { color: var(--ink); }
+  .box-blue   { background: var(--blue-light); border-right: 3px solid var(--blue); }
+  .box-blue .item-term { color: var(--blue); }
+  .box-purple { background: var(--purple-light); border-right: 3px solid var(--purple); }
+  .box-purple .item-term { color: var(--purple); }
+
+  table.data-table { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-size: 14.5px; }
+  table.data-table th { background: var(--ink); color: var(--gold-light); padding: 9px 12px; text-align: right; font-family:'Amiri',serif; font-weight:700; }
+  table.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); color: var(--ink-light); vertical-align: top; }
+  table.data-table tr:nth-child(even) td { background: rgba(184,134,11,0.03); }
+
+  .freq-bar-row { display:flex; align-items:center; gap: 10px; margin-bottom: 8px; }
+  .freq-bar-label { width: 130px; flex-shrink:0; font-size: 13.5px; color: var(--ink); font-weight:600; }
+  .freq-bar-track { flex:1; background: var(--parchment-deep); border-radius: 4px; height: 16px; overflow:hidden; }
+  .freq-bar-fill { height:100%; border-radius:4px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .freq-bar-count { width: 30px; text-align:left; font-size:13px; color:var(--ink-light); flex-shrink:0; }
+
+  .scan-list { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 20px; }
+  .scan-row { display:flex; gap: 12px; align-items: flex-start; padding: 8px 12px; border-radius: 6px; background: var(--parchment); border: 1px solid var(--border); font-size: 14px; }
+  .scan-row .vnum { flex-shrink:0; width: 28px; height:28px; border-radius:50%; background: var(--ink); color:var(--gold-light); display:flex; align-items:center; justify-content:center; font-size:13px; font-family:'Amiri',serif; }
+  .scan-row .vtext { color: var(--ink-light); }
+  .scan-row .vtext b { color: var(--ink); }
+
+  .verse-cite {
+    font-family:'Amiri',serif; font-size: 18px; color: var(--ink); background: var(--parchment-deep);
+    border-radius: 6px; padding: 10px 16px; margin: 10px 0; display:inline-block;
+  }
+
+  .diagram-box { background: var(--parchment); border: 1px dashed var(--gold); border-radius: 10px; padding: 20px; margin: 16px 0; text-align:center; }
+
+  .method-note {
+    background: linear-gradient(135deg, var(--gold-faint), rgba(26,107,90,0.04));
+    border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 14.5px;
+  }
+  .method-note strong { color: var(--rust); }
+
+  @media (max-width: 600px) {
+    .module { padding: 20px; }
+    .freq-bar-label { width: 90px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ai-disclosure" style="background:#4A2E1C;color:#F0E8D8;text-align:center;padding:10px 20px;font-size:13px;line-height:1.8;">
+  ⚠️ تنبيه: هذا المحتوى تم إعداده بمساعدة الذكاء الاصطناعي وقد يحتوي على أخطاء في الشرح والتحليل، يُرجى المراجعة والتحقق خاصة في المسائل الشرعية والتاريخية واللغوية.
+</div>
+
+<header class="hero">
+  <div class="hero-ornament">✦ ✦ ✦</div>
+  <h1>إنِّي أتتني لسانٌ لا أسرُّ بها ... من علوُ لا عجبٌ منها ولا سخرُ</h1>
+  <div class="subtitle">تحليل أكاديمي شامل لقصيدة أعشى باهلة (عامر بن الحارث) — بيتاً بيتاً</div>
+  <p class="academic-note">
+    دراسة نصّية تحليلية معدّة وفق مناهج النقد الأدبي الأكاديمي: تشمل التحليل الدلالي، والمعجمي، والنحوي (الإعراب الكامل)، والبلاغي، والتاريخي، والصوتي/العروضي لكل بيت من أبيات القصيدة، إضافة إلى ملحق تحليلي مكمّل (فرضية القراءة، الحقول الدلالية، اللسانيات التداولية، البنية النفسية...) وخلاصة تركيبية تتناول البنية الفنية والقيمة الأدبية والتاريخية للنص.
+  </p>
+  <div class="meta-grid">
+    <div class="meta-item"><div class="meta-label">الشاعر</div><div class="meta-value">أعشى باهلة، أبو قحفان عامر بن الحارث بن رياح، شاعر جاهلي</div></div>
+    <div class="meta-item"><div class="meta-label">البحر</div><div class="meta-value">البسيط</div></div>
+    <div class="meta-item"><div class="meta-label">القافية</div><div class="meta-value">رويّها الراء المضمومة (رائية)، قافية مطلقة</div></div>
+    <div class="meta-item"><div class="meta-label">الغرض</div><div class="meta-value">الرثاء (رثاء الأخ لأمّ)</div></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button onclick="expandAll()">فتح الكل</button>
+  <button onclick="collapseAll()">إغلاق الكل</button>
+  <button onclick="document.getElementById('muqaddimah').scrollIntoView({behavior:'smooth'})">المقدمة الأكاديمية</button>
+  <button onclick="document.getElementById('m1').scrollIntoView({behavior:'smooth'})">الملحق التحليلي</button>
+  <button onclick="document.getElementById('khatimah').scrollIntoView({behavior:'smooth'})">الخلاصة والمصادر</button>
+</div>
+
+<main class="container">
+
+<!-- ============================================================ -->
+<!-- المقدمة الأكاديمية -->
+<!-- ============================================================ -->
+<div id="muqaddimah" class="academic-block">
+  <h2>أولاً: المقدمة الأكاديمية — التوثيق التاريخي والسياق العام</h2>
+
+  <h3>١. الشاعر: أعشى باهلة</h3>
+  <p>
+    هو أبو قحفان عامر بن الحارث بن رياح بن أبي خالد بن ربيعة بن زيد بن عمرو بن سلامة بن ثعلبة بن وائل بن معن بن مالك، من قبيلة باهلة (وهي منسوبة إلى امرأة من هَمْدان اسمها باهلة، تزوّجت مَعْن بن أعصر فنُسب إليها أبناؤه). عُرف بلقب "أعشى باهلة" تمييزاً له عن غيره من الشعراء المكنّين بـ"الأعشى" في الجاهلية (كأعشى قيس، وأعشى همدان). هو شاعر جاهلي مجيد، وأشهر ما وصلنا من شعره هذه الرائية التي يرثي بها أخاه لأمّه المنتشر بن وهب الباهلي. المصادر المتاحة لا تحدد بدقة تاريخ مولده أو وفاته أو تفاصيل أخرى من سيرته خارج مناسبة هذه القصيدة؛ وأي تفصيل إضافي عن حياته يبقى غير موثّق بما يكفي، فيُصرَّح بغيابه بدل افتراضه.
+  </p>
+  <h3>٢. المناسبة والسبب</h3>
+  <p>
+    القصيدة قيلت في رثاء المنتشر بن وهب الباهلي، وهو أخو الشاعر لأمّه، ويُذكر أن المنتشر كان من فتّاك العرب المعروفين بكثرة الإغارة، وأنه قُتل على يد بني نفيل بن عمرو بن كلاب. يتضح من متن القصيدة نفسها (الأبيات الخاصة بخيانة "نفيل") أن هناك عنصر خيانة أو تفريط من بعض من كانوا مع المنتشر ساعة المواجهة، وهو ما يُصرَّح به الشاعر صراحة في قوله "لو لم تخنه نفيل، وهي خائنة". أما التفاصيل الدقيقة لظروف المعركة ومكانها وتاريخها فغير موثقة بدقة في المصادر المتاحة، فيُكتفى بالإشارة العامة الواردة في متن القصيدة ذاتها.
+  </p>
+  <h3>٣. البنية العامة للقصيدة</h3>
+  <p>
+    القصيدة رثاء عمودي وحيد الغرض (لا تعدد أغراض)، لكنها تتحرك عبر خمس حركات فنية متتابعة: تبدأ بلحظة وصول خبر النبأ (الأبيات ١-٥)، ثم تنتقل إلى الحركة المركزية الطويلة في تعداد مناقب المنتشر ومكارمه وشجاعته وكرمه (الأبيات ٦-١٤)، ثم إلى وصف هيئته الجسدية والمعنوية ولحظة المفارقة المفاجئة للفقد (الأبيات ١٥-١٨)، ثم عودة إلى تفاصيل حادثة القتل وخيانة "نفيل" (الأبيات ١٩-٢٤)، وتُختتم بمقطع التعزية والتسليم بالقدر مع نبرة رجاء ودعاء (الأبيات ٢٥-٢٨). هذا التسلسل من الصدمة إلى المديح إلى الحادثة إلى التسليم نمط معروف في بنية المراثي الجاهلية.
+  </p>
+  <h3>٤. القيمة التاريخية والأدبية</h3>
+  <p>
+    تستمد القصيدة قيمتها من كونها، بحسب المصادر المتاحة، أشهر ما وصل من شعر أعشى باهلة، وقد أوردها البغدادي في خزانة الأدب بتمامها، مما يشير إلى مكانتها في التراث النقدي. تتميز بجمعها بين حرارة الرثاء الشخصي (الأخ لأمّه) وبين نموذج القصيدة الجاهلية الكلاسيكية في رسم "الفتى الكامل" عبر تراكم صفات الكرم والشجاعة والمروءة والقناعة، وهي صفات تشكل معاً منظومة القيم البدوية الجاهلية في أوضح تجلياتها.
+  </p>
+</div>
+
+<!-- ============================================================ -->
+<!-- الحركة الأولى: لحظة النبأ -->
+<!-- ============================================================ -->
+<div class="movement-header">
+  <div class="badge">الحركة الأولى (الأبيات ١ – ٥): لحظة وصول النبأ والحيرة الأولى</div>
+  <p>تفتتح القصيدة بلحظة الصدمة: وصول خبر لا يُفرح، ثم السهر والحيرة، ثم تفصيل مشهد وصول الخبر عبر راكب قادم من تثليث، وتُختتم الحركة بإشارة إلى ما يستحقه المرثيّ من سماح ونهي وغيرة — أي تمهيد لتعداد المناقب في الحركة التالية.</p>
+</div>
+
+<div class="verse-card" id="v1">
+  <div class="verse-header" onclick="toggleVerse('v1')">
+    <span class="verse-number">١</span>
+    <span class="verse-text">إنِّي أتتني لسانٌ لا أسرُّ بها <span class="hemistich-separator">●</span> من علوُ لا عجبٌ منها ولا سخرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>وصلني خبرٌ (لسانٌ = رسالة/نبأ منقول على لسان قائل) لا أفرح به، جاءني من جهة عالية (علوّ)، وهو خبر لا مجال فيه للتعجب ولا للتندّر، بل هو نبأ جادّ وثقيل.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">لسانٌ:</span> هنا بمعنى الخبر أو الرسالة المنقولة قولاً، من باب تسمية الشيء باسم أداته (المجاز المرسل: اللسان بمعنى الكلام المنقول عنه).</div>
+      <div class="vocab-item"><span class="vocab-term">لا أسرُّ بها:</span> لا أفرح بها ولا تسرّني، فعل مضارع منفي من "سرّ يسرّ".</div>
+      <div class="vocab-item"><span class="vocab-term">علوُ:</span> جهة مرتفعة أو ناحية عالية من الأرض، ويُروى أيضاً بأنها اسم موضع أو ناحية جغرافية جاء منها الخبر؛ المصادر المتاحة لا تحسم أيّ القراءتين هي المقصودة تحديداً هنا فيُصرَّح بهذا التردد.</div>
+      <div class="vocab-item"><span class="vocab-term">سخرُ:</span> الاستهزاء أو التندّر، أي أن الخبر جادّ بحيث لا يحتمل عجباً ولا تندّراً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">إنِّي:</span> "إنَّ" حرف توكيد ونصب، والياء ضمير متصل في محل نصب اسم "إنّ".</div>
+      <div class="irab-item"><span class="irab-term">أتتني:</span> فعل ماضٍ مبني على الفتح، والتاء للتأنيث، والنون للوقاية، والياء ضمير متصل في محل نصب مفعول به.</div>
+      <div class="irab-item"><span class="irab-term">لسانٌ:</span> فاعل مؤخر مرفوع وعلامة رفعه الضمة، والجملة الفعلية "أتتني لسانٌ" في محل رفع خبر "إنّ".</div>
+      <div class="irab-item"><span class="irab-term">لا أسرُّ:</span> "لا" نافية، "أسرُّ" فعل مضارع مرفوع، والفاعل ضمير مستتر تقديره "أنا"، والجملة في محل رفع نعت لـ"لسان".</div>
+      <div class="irab-item"><span class="irab-term">بها:</span> جار ومجرور متعلقان بالفعل "أسرّ".</div>
+      <div class="irab-item"><span class="irab-term">من علوُ:</span> جار ومجرور متعلقان بمحذوف حال أو بالفعل "أتتني"، والواو هنا إشباع لضمة الروي في القافية المطلقة (وهو مما اقتضاه الوزن).</div>
+      <div class="irab-item"><span class="irab-term">لا عجبٌ:</span> "لا" نافية للجنس تعمل عمل "إنّ"، و"عجبٌ" اسمها مبني على الفتح في محل نصب (أو مرفوع بحسب رواية الإهمال)، والخبر محذوف تقديره "فيها" أو "منها".</div>
+      <div class="irab-item"><span class="irab-term">منها:</span> جار ومجرور متعلقان بالخبر المحذوف أو بـ"عجب".</div>
+      <div class="irab-item"><span class="irab-term">ولا سخرُ:</span> الواو عاطفة، "لا" نافية، "سخرُ" معطوف على "عجبٌ" بنفس حكمه الإعرابي.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">المجاز المرسل في "لسانٌ":</span> إطلاق "اللسان" وإرادة الخبر أو الكلام المنقول، علاقته الآلية (اللسان أداة الكلام)؛ هذا الاختيار يمنح الافتتاحية طابعاً حسّياً مباشراً، وكأن الخبر جسمٌ قادم يُحسّ وقعه قبل أن يُفهم مضمونه.</div>
+      <div class="balagha-item"><span class="balagha-term">التوكيد بـ"إنّ":</span> افتتاح القصيدة بأداة توكيد يمنح البيت الأول نبرة جدّية فورية، فيهيئ المتلقي لحدث جلل منذ الكلمة الأولى دون تمهيد تدريجي.</div>
+      <div class="balagha-item"><span class="balagha-term">نفي "العجب" و"السخر" معاً:</span> جمع الشاعر بين نفي طرفين متقابلين (التعجب الإيجابي المندهش، والسخرية الاستهزائية) ليؤكد أن الخبر جادّ صرف، لا يحتمل أي استجابة عاطفية خفيفة؛ وهذا تمهيد بلاغي لثقل موضوع الرثاء القادم.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>هذا البيت هو عتبة القصيدة الأولى: يضع المتلقي مباشرة في لحظة تلقي الخبر المفجع، قبل أن يُسمّى الفقيد أو تُذكر تفاصيل الحادثة، وهو أسلوب افتتاحي شائع في مراثي الجاهلية (البدء باللحظة النفسية قبل السردية).</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يلاحظ تكرار حرف السين في "أسرّ" و"سخرُ"، وهو صوت رخو مهموس يوحي بالهمس والتردد، بما يناسب لحظة تلقي خبر ثقيل يُقال بصوت خافت لا صراخ فيه.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v2">
+  <div class="verse-header" onclick="toggleVerse('v2')">
+    <span class="verse-number">٢</span>
+    <span class="verse-text">فبتُّ مرتفقاً حيرانَ أندبه <span class="hemistich-separator">●</span> وكنتُ أحذره لو ينفعُ الحذرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>فبتُّ ليلتي متكئاً على مرفقي، حائراً، أندب فقيده، وأتذكر أنني كنت أحذر عليه مما وقع، لكن الحذر لم يكن لينفع لو نفع الحذر أصلاً شيئاً أمام القدر.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">مرتفقاً:</span> متكئاً على مرفقه، هيئة جسدية تدل على السهر والانكسار، لا هيئة نوم مستريح.</div>
+      <div class="vocab-item"><span class="vocab-term">حيرانَ:</span> حائر، فاقد الاتجاه أو القرار، حال منصوبة تصف نفسية الشاعر.</div>
+      <div class="vocab-item"><span class="vocab-term">أندبه:</span> أرثيه وأبكيه بصوت، من "الندب" وهو البكاء بذكر محاسن الميت.</div>
+      <div class="vocab-item"><span class="vocab-term">أحذره:</span> كنتُ أخشى عليه وأتوقع له مكروهاً، وهي إشارة استباقية إلى مخاطر كان المنتشر معرَّضاً لها بحكم طبيعة حياته (وهو ما يوضحه سياق القصيدة لاحقاً بوصفه فارساً مغامراً).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">فبتُّ:</span> الفاء عاطفة أو استئنافية، "بتُّ" فعل ماضٍ ناقص من أخوات "كان" مبني على الضم، والتاء ضمير متصل في محل رفع اسمه.</div>
+      <div class="irab-item"><span class="irab-term">مرتفقاً:</span> خبر "بات" منصوب وعلامة نصبه الفتحة.</div>
+      <div class="irab-item"><span class="irab-term">حيرانَ:</span> حال منصوبة من فاعل "بتُّ" (التاء)، وعلامة نصبها الفتحة لأنه ممنوع من الصرف (صفة على وزن فَعْلان).</div>
+      <div class="irab-item"><span class="irab-term">أندبه:</span> فعل مضارع مرفوع، والفاعل ضمير مستتر تقديره "أنا"، والهاء ضمير متصل في محل نصب مفعول به، والجملة في محل نصب حال ثانية أو خبر ثانٍ.</div>
+      <div class="irab-item"><span class="irab-term">وكنتُ:</span> الواو عاطفة، "كنتُ" فعل ماضٍ ناقص والتاء اسمه في محل رفع.</div>
+      <div class="irab-item"><span class="irab-term">أحذره:</span> فعل مضارع مرفوع، فاعله مستتر، والهاء مفعول به، والجملة في محل نصب خبر "كان".</div>
+      <div class="irab-item"><span class="irab-term">لو ينفعُ:</span> "لو" حرف شرط غير جازم، "ينفعُ" فعل مضارع مرفوع، والفاعل ضمير مستتر يعود على "الحذر".</div>
+      <div class="irab-item"><span class="irab-term">الحذرُ:</span> فاعل "ينفع" مرفوع وعلامة رفعه الضمة (وجواب "لو" محذوف يفهم من السياق: لنفعه حذري).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الاستدراك الحجاجي في "لو ينفعُ الحذرُ":</span> الشاعر لا يكتفي بذكر حذره السابق بل يستدرك عليه بأداة الشرط الامتناعي، مقرّاً ضمناً بأن هذا الحذر لم يكن كافياً أو نافعاً، وهو اعتراف مرير بعجز الحيطة البشرية أمام القدر، ويحمل بعداً حجاجياً يمهّد لتقبّل المصيبة في خاتمة القصيدة.</div>
+      <div class="balagha-item"><span class="balagha-term">تصوير الهيئة الجسدية (مرتفقاً، حيران):</span> بدل التصريح المباشر بالحزن، يرسم الشاعر هيئة جسدية خارجية (الاتكاء، الحيرة) تدلّ ضمناً على الاضطراب الداخلي، وهو أسلوب تصويري غير مباشر أبلغ من التصريح.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">إشكالية الحذر السابق والقدر:</span> يطرح هذا البيت مفارقة تراجيدية جوهرية في القصيدة كلها: أن الشاعر كان يتوقع الخطر ("كنتُ أحذره") لكن المعرفة المسبقة لم تدرأ الحادثة، وهذه الثنائية بين العلم والعجز ستتكرر لاحقاً في بيت الخيانة ("لو لم تخنه نفيل")، فيتشكل من البيتين معاً خط سردي عن قدرية الفقد رغم الحيطة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>ينتقل البيت من لحظة "تلقي الخبر" في البيت الأول إلى "استقبال الليل" وحيداً بالحزن، وهو انتقال زمني طبيعي (من لحظة الوصول إلى ليلة السهر)، ويؤسس لحالة الحيرة النفسية التي ستحكم نبرة الأبيات التالية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>تكرار الفعل الناقص ("بتُّ... كنتُ") في صدر وعجز البيت يخلق توازياً إيقاعياً هادئاً يحاكي رتابة السهر الطويل، بينما يبرز الطباق الضمني بين "الحذر" (الفعل الوقائي) و"عدم النفع" (النتيجة) توتراً دلالياً يعكس المفارقة المذكورة أعلاه.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v3">
+  <div class="verse-header" onclick="toggleVerse('v3')">
+    <span class="verse-number">٣</span>
+    <span class="verse-text">وجاشت النفسُ لما جاَء جمعهم <span class="hemistich-separator">●</span> وراكبٌ جاَء منْ تثليثَ معتمرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>اضطربت النفس وثارت حين جاء جمعُهم (قومه أو رفاقه)، وجاء أيضاً راكبٌ قادم من ناحية "تثليث" وهو معتمّ (لابس عمامته على هيئة معينة، أو "معتمر" بمعنى قاصد بالعمرة/الزيارة، والمصادر المتاحة لا تحسم الدلالة الدقيقة للفظة).</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">جاشت:</span> اضطربت وثارت، يقال "جاشت نفسه" إذا خفقت من الخوف أو الحزن أو الفزع.</div>
+      <div class="vocab-item"><span class="vocab-term">تثليثَ:</span> اسم موضع معروف في جزيرة العرب، وهو منصرف هنا اسم علم لمكان.</div>
+      <div class="vocab-item"><span class="vocab-term">معتمرُ:</span> اسم فاعل من "اعتمر"، وله في العربية معنيان محتملان: القاصد للعمرة، أو لابس العمامة على هيئة خاصة؛ السياق هنا (راكب حامل خبراً) يرجّح المعنى الثاني (هيئة الرسول القادم)، لكن يُصرَّح بأن الترجيح تأويلي وليس قطعياً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">وجاشت:</span> الواو استئنافية، "جاشت" فعل ماضٍ مبني على الفتح، والتاء للتأنيث.</div>
+      <div class="irab-item"><span class="irab-term">النفسُ:</span> فاعل مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">لما:</span> ظرفية شرطية غير جازمة بمعنى "حين".</div>
+      <div class="irab-item"><span class="irab-term">جاَء:</span> فعل ماضٍ مبني على الفتح.</div>
+      <div class="irab-item"><span class="irab-term">جمعهم:</span> فاعل مرفوع، وهم ضمير متصل مضاف إليه في محل جر.</div>
+      <div class="irab-item"><span class="irab-term">وراكبٌ:</span> الواو عاطفة أو استئنافية، "راكبٌ" مبتدأ مرفوع (أو فاعل لفعل محذوف يفسره "جاء" التالي على قراءة الاشتغال).</div>
+      <div class="irab-item"><span class="irab-term">جاَء:</span> فعل ماضٍ، والجملة خبر المبتدأ "راكبٌ" في محل رفع.</div>
+      <div class="irab-item"><span class="irab-term">منْ تثليثَ:</span> جار ومجرور متعلقان بالفعل "جاء"، و"تثليث" ممنوعة من الصرف للعلمية والتأنيث.</div>
+      <div class="irab-item"><span class="irab-term">معتمرُ:</span> خبر ثانٍ لـ"راكبٌ" أو حال منه، مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التصوير الحسي لاضطراب النفس ("جاشت"):</span> استخدام فعل حسي (الجَيَشان، وهو غليان الماء أو فورانه) لوصف حالة نفسية مجردة (الفزع)، وهي استعارة تجسيدية تنقل الاضطراب الداخلي إلى صورة محسوسة يشعر بها القارئ.</div>
+      <div class="balagha-item"><span class="balagha-term">التشخيص الدرامي بذكر "الراكب":</span> بدل أن يذكر الشاعر الخبر مباشرة، يُدخل شخصية "الراكب القادم من تثليث" كعنصر سردي مشهدي، فيمنح البيت بعداً قصصياً حيّاً يجسد لحظة وصول النبأ بدل الاكتفاء بتقريرها.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يفصّل هذا البيت المشهد الذي أُجمل في البيت الأول ("أتتني لسان")، فيكشف الآن آلية وصول الخبر: جمع يصل، وراكب من موضع محدد (تثليث) يحمل النبأ، وهو تكنيك سردي يعمّق واقعية اللحظة ويثبّت مكانها الجغرافي.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>تكرار الفعل "جاء" مرتين في البيت (جاء جمعهم، جاء... معتمر) يخلق تكراراً صوتياً ودلالياً يحاكي توالي الوصول: وصول الجمع ثم وصول الراكب، كأن الإيقاع نفسه يحاكي تتابع الأحداث.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v4">
+  <div class="verse-header" onclick="toggleVerse('v4')">
+    <span class="verse-number">٤</span>
+    <span class="verse-text">يأبى على الناسِ لا يلوِي على أحدِ <span class="hemistich-separator">●</span> حتى التقينا وكانت دوننا مضرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>وصف لعزيمة الراكب (أو المرثيّ) وإصراره: يرفض ويأبى على الناس، لا يلتفت أو يتوقف لأحد، حتى التقينا وكانت قبيلة مضر تفصل بيننا مسافةً.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">يأبى:</span> يرفض ويمتنع، فعل مضارع من "أبى يأبى".</div>
+      <div class="vocab-item"><span class="vocab-term">لا يلوِي على أحدِ:</span> لا يلتفت ولا يتمهل لأجل أحد، تعبير كنائي عن سرعة القصد والإصرار في السير.</div>
+      <div class="vocab-item"><span class="vocab-term">مضرُ:</span> اسم قبيلة عربية كبرى معروفة، يُذكر هنا كإشارة جغرافية-قبلية إلى المسافة أو الحدود الفاصلة بين الشاعر ومن التقاه.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">يأبى:</span> فعل مضارع مرفوع وعلامة رفعه الضمة المقدرة، والفاعل ضمير مستتر يعود على "الراكب".</div>
+      <div class="irab-item"><span class="irab-term">على الناسِ:</span> جار ومجرور متعلقان بالفعل "يأبى".</div>
+      <div class="irab-item"><span class="irab-term">لا يلوِي:</span> "لا" نافية، "يلوِي" فعل مضارع مرفوع، والفاعل مستتر، والجملة حال أو خبر ثانٍ.</div>
+      <div class="irab-item"><span class="irab-term">على أحدِ:</span> جار ومجرور متعلقان بالفعل "يلوي".</div>
+      <div class="irab-item"><span class="irab-term">حتى:</span> حرف غاية وجر (أو ابتدائية هنا لدخولها على الجملة الفعلية الماضية).</div>
+      <div class="irab-item"><span class="irab-term">التقينا:</span> فعل ماضٍ مبني على السكون لاتصاله بضمير الرفع "نا"، والضمير في محل رفع فاعل.</div>
+      <div class="irab-item"><span class="irab-term">وكانت:</span> الواو حالية، "كانت" فعل ماضٍ ناقص.</div>
+      <div class="irab-item"><span class="irab-term">دوننا:</span> ظرف مكان منصوب متعلق بخبر "كانت" محذوف تقديره "كائنة"، ونا ضمير مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">مضرُ:</span> اسم "كانت" مرفوع وعلامة رفعه الضمة (ممنوعة من الصرف للعلمية والتأنيث).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الكناية في "لا يلوِي على أحدِ":</span> كناية عن شدة الإصرار وسرعة القصد، إذ الالتواء هنا مجاز عن الالتفات والتمهل، فنفيه يفيد المضيّ الحثيث دون هوادة.</div>
+      <div class="balagha-item"><span class="balagha-term">توظيف الاسم القبلي "مضر" دلالياً لا جغرافياً فقط:</span> ذكر قبيلة مضر لا يفيد فقط تحديد المسافة الجغرافية، بل يستحضر أيضاً بعداً قبلياً معروفاً في المخيال الجاهلي (اتساع نطاق مضر وكثرتها)، فيضخّم صورة المسافة التي قُطعت لإيصال الخبر.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يواصل البيت رسم مشهد الراكب المصمّم على إيصال الخبر رغم بُعد المسافة، فيعمّق إحساس القارئ بجسامة الحدث الذي استدعى هذا الإصرار في السفر والتبليغ.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>الفعلان المتتاليان "يأبى... يلوي" في الشطر الأول يخلقان إيقاعاً متسارعاً يحاكي الحركة الدؤوبة، بينما يهدأ الإيقاع في الشطر الثاني مع "التقينا" ليعكس لحظة الوصول والسكون بعد الحركة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v5">
+  <div class="verse-header" onclick="toggleVerse('v5')">
+    <span class="verse-number">٥</span>
+    <span class="verse-text">إنَّ الذي جئتَ من تثليثَ تندبه <span class="hemistich-separator">●</span> منه السماحُ ومنه النهيُ والغيرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يخاطب الشاعر الراكب: إن الذي جئتَ من تثليث تنعاه (تندبه) كانت فيه صفات السماحة والكرم، وفيه أيضاً القدرة على النهي (منع الظلم أو ردع الأعداء) والغَيرة (الحمية والأنفة).</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">تندبه:</span> تنعاه وتبكيه بذكر مناقبه، من الفعل "ندب" الذي سبق في البيت الثاني ("أندبه")، وتكراره هنا يربط ضمير المخاطب (الراكب) بحالة الشاعر نفسه.</div>
+      <div class="vocab-item"><span class="vocab-term">السماحُ:</span> الجود والكرم وسهولة النفس في العطاء.</div>
+      <div class="vocab-item"><span class="vocab-term">النهيُ:</span> هنا بمعنى القدرة على الردع والمنع، أي أنه كان يُنهى به عن الظلم (صفة الفارس الرادع).</div>
+      <div class="vocab-item"><span class="vocab-term">الغيرُ:</span> جمع "غيرة"، وهي الحمية والأنفة والحرص على العرض والحرمات.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">إنَّ:</span> حرف توكيد ونصب.</div>
+      <div class="irab-item"><span class="irab-term">الذي:</span> اسم موصول مبني في محل نصب اسم "إنّ".</div>
+      <div class="irab-item"><span class="irab-term">جئتَ:</span> فعل ماضٍ مبني على السكون، والتاء ضمير متصل في محل رفع فاعل، والجملة صلة الموصول لا محل لها من الإعراب.</div>
+      <div class="irab-item"><span class="irab-term">من تثليثَ:</span> جار ومجرور متعلقان بالفعل "جئتَ".</div>
+      <div class="irab-item"><span class="irab-term">تندبه:</span> فعل مضارع مرفوع، فاعله ضمير مستتر تقديره أنت، والهاء مفعول به، والجملة في محل نصب حال من فاعل "جئت" أو خبر "إنّ" مقدم على تأويل.</div>
+      <div class="irab-item"><span class="irab-term">منه:</span> جار ومجرور متعلقان بخبر محذوف مقدم.</div>
+      <div class="irab-item"><span class="irab-term">السماحُ:</span> مبتدأ مؤخر مرفوع، والجملة الاسمية "منه السماح" في محل رفع خبر "إنّ".</div>
+      <div class="irab-item"><span class="irab-term">ومنه النهيُ:</span> معطوفة على الجملة السابقة بنفس التركيب الإعرابي.</div>
+      <div class="irab-item"><span class="irab-term">والغيرُ:</span> الواو عاطفة، "الغيرُ" معطوف على "النهيُ" مرفوع.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">تكرار التركيب "منه... منه" (رد العجز على الصدر جزئياً):</span> يخلق هذا التكرار الأنافوري إيقاعاً تعديدياً يُحضّر لأسلوب سرد المناقب الذي سيهيمن على الحركة الفنية التالية، فكأن هذا البيت مفصل انتقالي يفتتح باب المديح داخل الرثاء.</div>
+      <div class="balagha-item"><span class="balagha-term">الجمع بين صفات متقابلة الطابع (السماح مقابل النهي والغيرة):</span> يجمع البيت بين صفة "لينية" (الكرم) وصفتين "صارمتين" (الردع والحمية)، فيرسم بذلك صورة الفتى الكامل الذي يجمع اللين والشدة معاً، وهي ثنائية قيمية جوهرية في مفهوم المروءة الجاهلية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">مفصل بنائي بين الحركتين الأولى والثانية:</span> هذا البيت يمثل نقطة الوصل بين حركة "السرد المشهدي" (البيتين ١-٤) وحركة "تعداد المناقب" (الأبيات ٦ وما بعدها)، إذ يبدأ فيه ذكر الصفات (السماح، النهي، الغيرة) بإيجاز شديد ليكون بمثابة العنوان المُجمَل الذي ستُفصّله الأبيات التالية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يختم هذا البيت الحركة الأولى (لحظة النبأ) وينقل القصيدة تدريجياً نحو الحركة الثانية (تعداد المناقب)، فهو بمثابة الجسر الذي ينتقل بالخطاب من "وصف اللحظة" إلى "وصف الفقيد".</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>التكرار الصوتي لحرف الميم في "منه" مرتين يضفي طابعاً ترديدياً هادئاً أقرب إلى نبرة العدّ والتعداد، وهو تمهيد إيقاعي مناسب لأسلوب سرد المناقب الذي سيتوالى في الأبيات اللاحقة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- الحركة الثانية: تعداد المناقب -->
+<!-- ============================================================ -->
+<div class="movement-header">
+  <div class="badge">الحركة الثانية (الأبيات ٦ – ١٤): مديح مناقب المنتشر — الكرم والشجاعة واحتمال المشاق</div>
+  <p>الحركة الأطول والمركزية في القصيدة: تنتقل من ذكر الجود المستمر (لا تغبّ جفنته الضيف) إلى صور الشجاعة والصمود في الحروب والأسفار القاسية، مرسّخة نموذج "الفتى الكامل" في المنظومة القيمية الجاهلية.</p>
+</div>
+
+<div class="verse-card" id="v6">
+  <div class="verse-header" onclick="toggleVerse('v6')">
+    <span class="verse-number">٦</span>
+    <span class="verse-text">نعيتَ من لا تغبُّ الحيَّ جفنتهُ <span class="hemistich-separator">●</span> إذا الكواكبُ أخطا نوءها المطرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>نعيتَ (أعلنتَ موت) رجلاً كانت قصعته/جفنته الكبيرة لا تغيب عن أهل الحيّ (أي كان يطعمهم باستمرار)، حتى في أوقات الجدب حين تُخطئ نجوم الأنواء موعد مطرها (فيقلّ الطعام على الناس، فيبقى هو الكريم المطعم رغم الجدب).</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">نعيتَ:</span> أعلنتَ خبر موته، من "النعي" وهو الإخبار بموت الميت.</div>
+      <div class="vocab-item"><span class="vocab-term">لا تغبُّ:</span> لا تغيب أو لا تنقطع، من "الغبّ" وهو التناوب يوماً بعد يوم؛ "لا تغبّ" أي تحضر باستمرار دون انقطاع.</div>
+      <div class="vocab-item"><span class="vocab-term">جفنتهُ:</span> قصعة الطعام الكبيرة التي يُطعم منها الضيوف والجيران، رمز الكرم في الشعر الجاهلي.</div>
+      <div class="vocab-item"><span class="vocab-term">الكواكبُ... نوءها:</span> "الأنواء" نجوم كانت العرب تنسب إليها هطول المطر في مواسم معينة؛ "أخطا نوءها" أي لم يهطل المطر في موعده المتوقع فحدث الجدب.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">نعيتَ:</span> فعل ماضٍ مبني على السكون، والتاء ضمير متصل في محل رفع فاعل.</div>
+      <div class="irab-item"><span class="irab-term">من:</span> اسم موصول مبني في محل نصب مفعول به.</div>
+      <div class="irab-item"><span class="irab-term">لا تغبُّ:</span> "لا" نافية، "تغبُّ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">الحيَّ:</span> مفعول به منصوب لـ"تغبّ" (على تضمين الفعل معنى "تفارق")، وعلامة نصبه الفتحة.</div>
+      <div class="irab-item"><span class="irab-term">جفنتهُ:</span> فاعل "تغبّ" مرفوع، والهاء مضاف إليه، والجملة صلة الموصول لا محل لها من الإعراب.</div>
+      <div class="irab-item"><span class="irab-term">إذا:</span> ظرفية شرطية غير جازمة متعلقة بالفعل "تغبّ".</div>
+      <div class="irab-item"><span class="irab-term">الكواكبُ:</span> مبتدأ مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">أخطا:</span> فعل ماضٍ مبني على الفتح المقدر، والفاعل ضمير مستتر يعود على "الكواكب"، والجملة في محل رفع خبر المبتدأ.</div>
+      <div class="irab-item"><span class="irab-term">نوءها:</span> مفعول به منصوب، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">المطرُ:</span> فاعل "أخطا" مرفوع وعلامة رفعه الضمة (على تقدير أن الفاعل هو المطر والمفعول النوء، أي أخطأ المطرُ ميعاد نوئه).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الكناية عن الكرم بـ"لا تغبّ الحيَّ جفنتهُ":</span> بدل التصريح بأنه كريم، يصف الشاعر مظهراً حسياً مستمراً (حضور القصعة الدائم)، وهي كناية عن الكرم أبلغ من التصريح لأنها تصوّر التكرار الزمني للفعل الكريم لا مجرد صفة ثابتة.</div>
+      <div class="balagha-item"><span class="balagha-term">صورة الجدب الفلكية ("الكواكب أخطا نوءها المطر"):</span> استحضار صورة كونية (خطأ النجوم في مواعيد الأنواء) ليصف أشد أوقات الجدب قسوة، فيصبح كرم الممدوح استثناءً وسط فشل الطبيعة نفسها في العطاء، وهذا تضخيم بلاغي لقيمة الجود عبر مقابلته بعجز كوني.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يفتتح هذا البيت الحركة الثانية بأول صفة من صفات المرثيّ (الكرم)، بعد أن أُجملت الصفات في البيت الخامس ("منه السماح")؛ فهو أول تفصيل لتلك الإجمالة، ويُقدَّم الكرم أولاً باعتباره الصفة الأبرز في منظومة القيم الجاهلية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>تكرار حرف الغين والباء المشددة في "تغبّ" يعطي وقعاً صوتياً حاسماً يوافق معنى الاستمرارية والثبات؛ كما يخلق الجناس الاشتقاقي بين "الكواكب" و"نوءها" ترابطاً صوتياً-دلالياً يعزز الصورة الفلكية.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v7">
+  <div class="verse-header" onclick="toggleVerse('v7')">
+    <span class="verse-number">٧</span>
+    <span class="verse-text">وراحت الشولُ مغبراً مناكبها <span class="hemistich-separator">●</span> شعثاً تغيرَ منها النيُّ والوبرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>وصف لنوق (الشول: النوق التي جفّ لبنها أو خفّ حملها) عادت من السفر الطويل مغبرّة الأكتاف، شعثاء الهيئة، قد تغيّر شحمها (النيّ) ووبرها من طول العناء، في إشارة إلى كثرة أسفار الممدوح وتنقلاته الشاقة.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">الشولُ:</span> جمع "شائلة"، وهي النوق التي شال لبنها أي قلّ وارتفع ضرعها، وتُستخدم أحياناً كناية عن الإبل عموماً في حالة الأسفار الطويلة.</div>
+      <div class="vocab-item"><span class="vocab-term">مغبراً مناكبها:</span> أكتافها مغطاة بالغبار من طول السفر.</div>
+      <div class="vocab-item"><span class="vocab-term">شعثاً:</span> جمع "أشعث"، أي متغيرة الهيئة غير مرتّبة، تصف حال الإبل بعد سفر طويل شاق.</div>
+      <div class="vocab-item"><span class="vocab-term">النيُّ:</span> الشحم، أي أن شحم الإبل قد نقص أو تغيّر لونه من الإجهاد.</div>
+      <div class="vocab-item"><span class="vocab-term">الوبرُ:</span> شعر الإبل، وتغيّره دليل آخر على طول العناء والسفر.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">وراحت:</span> الواو عاطفة، "راحت" فعل ماضٍ مبني على الفتح، والتاء للتأنيث.</div>
+      <div class="irab-item"><span class="irab-term">الشولُ:</span> فاعل مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">مغبراً:</span> حال منصوبة من "الشول" أو خبر لـ"راح" الناقصة، وعلامة نصبه الفتحة.</div>
+      <div class="irab-item"><span class="irab-term">مناكبها:</span> فاعل لاسم الفاعل "مغبراً" مرفوع (على إعمال اسم الفاعل)، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">شعثاً:</span> حال ثانية منصوبة، أو نعت لـ"مغبراً" على تأويله اسماً.</div>
+      <div class="irab-item"><span class="irab-term">تغيرَ:</span> فعل ماضٍ مبني على الفتح.</div>
+      <div class="irab-item"><span class="irab-term">منها:</span> جار ومجرور متعلقان بالفعل "تغيّر".</div>
+      <div class="irab-item"><span class="irab-term">النيُّ:</span> فاعل "تغيّر" مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">والوبرُ:</span> الواو عاطفة، "الوبرُ" معطوف على "النيّ" مرفوع.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التصوير الحسي التفصيلي لأثر السفر على الإبل:</span> بدل قول "كان كثير الأسفار"، يرسم الشاعر تفاصيل بصرية دقيقة (الغبار، الشعث، تغيّر الشحم والوبر)، وهذا أسلوب وصفي جاهلي أصيل يستمد قوته من الدقة الحسية بدل التجريد.</div>
+      <div class="balagha-item"><span class="balagha-term">الإبل كدليل غير مباشر على شخصية صاحبها:</span> استخدام حال الناقة (المطية) كمرآة تعكس حال راكبها وأسلوب حياته، وهو تكنيك بلاغي شائع في الشعر الجاهلي يُعرف بوصف الرحلة كمعادل موضوعي لصفات الفارس.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>ينتقل البيت من صفة الكرم (البيت السادس) إلى صفة أخرى مكمّلة وهي كثرة الترحال والسعي، ممهداً لسلسلة الأبيات التالية التي ستُفصّل جوانب الشجاعة والصمود في الأسفار الشاقة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>تتابع الألفاظ ذات الإيقاع الثقيل نسبياً ("مغبراً"، "شعثاً"، "تغيّر") يحاكي صوتياً ثقل حالة الإعياء الموصوفة، بينما يخلق الطباق الضمني بين حيوية الرحلة السابقة وحالة الإبل المنهكة الآن توتراً دلالياً مناسباً لسياق الرثاء.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v8">
+  <div class="verse-header" onclick="toggleVerse('v8')">
+    <span class="verse-number">٨</span>
+    <span class="verse-text">عليه أولُ زادِ القومِ إنْ نزلوا <span class="hemistich-separator">●</span> ثم المطيُّ إذا ما أرملُوا جزرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>كان هو أول من يُقدَّم عليه واجب إطعام القوم أول ما ينزلون، ثم إذا نفد الزاد (أرملوا) كانت مطيّه (إبله) تُنحر لهم طعاماً، أي أنه يجود حتى بمطيته عند الحاجة القصوى.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">زادِ القومِ:</span> طعام الرفقة أو المسافرين.</div>
+      <div class="vocab-item"><span class="vocab-term">أرملُوا:</span> نفد زادهم، من "الإرمال" وهو نفاد الزاد في السفر.</div>
+      <div class="vocab-item"><span class="vocab-term">المطيُّ:</span> الإبل التي تُركب.</div>
+      <div class="vocab-item"><span class="vocab-term">جزرُ:</span> ما يُنحر ويُذبح للأكل، أي أن مطيته تصبح "جزوراً" تُنحر لإطعام القوم عند الضرورة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">عليه:</span> جار ومجرور متعلقان بخبر مقدم محذوف.</div>
+      <div class="irab-item"><span class="irab-term">أولُ:</span> مبتدأ مؤخر مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">زادِ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">القومِ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">إنْ نزلوا:</span> "إنْ" حرف شرط جازم، "نزلوا" فعل ماضٍ مبني في محل جزم فعل الشرط، والواو فاعل.</div>
+      <div class="irab-item"><span class="irab-term">ثم:</span> حرف عطف يفيد الترتيب مع التراخي.</div>
+      <div class="irab-item"><span class="irab-term">المطيُّ:</span> مبتدأ مرفوع (والخبر محذوف يفهم من سياق الجملة السابقة "عليه").</div>
+      <div class="irab-item"><span class="irab-term">إذا ما:</span> "إذا" ظرفية شرطية، "ما" زائدة للتوكيد.</div>
+      <div class="irab-item"><span class="irab-term">أرملُوا:</span> فعل ماضٍ مبني في محل جزم فعل الشرط، والواو فاعل.</div>
+      <div class="irab-item"><span class="irab-term">جزرُ:</span> خبر المبتدأ "المطيّ" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التدرج البلاغي في الجود (من الزاد العادي إلى نحر المطية):</span> يرتب الشاعر الكرم في درجتين متصاعدتين: الإطعام العادي أولاً، ثم التضحية بأداة السفر والبقاء نفسها (المطية) عند اشتداد الحاجة، وهذا التدرج يعمّق صورة الكرم بجعله كرماً يبلغ حدّ التضحية بالنفس لا بالفائض فقط.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يواصل هذا البيت تفصيل صفة الكرم التي بدأت في البيت السادس، فيضيف بُعداً جديداً: كرم يتصاعد مع اشتداد الأزمة (الإرمال)، مما يرسّخ صورة الكرم غير المحدود بالوفرة بل الممتد إلى وقت الشح.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>التوازي التركيبي بين شطري البيت ("عليه أول زاد القوم... ثم المطيّ... جزر") يخلق إيقاعاً تصاعدياً هادئاً يحاكي تدرّج الموقف من الطبيعي إلى الاستثنائي.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v9">
+  <div class="verse-header" onclick="toggleVerse('v9')">
+    <span class="verse-number">٩</span>
+    <span class="verse-text">من ليس في خيره شرٌّ يكدرهُ <span class="hemistich-separator">●</span> على الصديق ولا في صفوهِ كدرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يصفه بأنه رجل لا يشوب خيرَه أذًى يكدّره على صديقه، ولا يخالط صفو عشرته أيّ كدر، أي أن كرمه وودّه خالصان لا تشوبهما منّة أو أذى.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">يكدرهُ:</span> يعكّره ويفسده، من "الكدر" ضد الصفاء.</div>
+      <div class="vocab-item"><span class="vocab-term">صفوهِ:</span> صفاء علاقته أو مودته.</div>
+      <div class="vocab-item"><span class="vocab-term">كدرُ:</span> عكارة أو منغّص، مأخوذ من نفس جذر "يكدره" في الشطر الأول (جناس اشتقاق).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">من:</span> اسم موصول مبني في محل رفع خبر لمبتدأ محذوف تقديره "هو"، أو بدل من فاعل محذوف يعود على الممدوح في الأبيات السابقة.</div>
+      <div class="irab-item"><span class="irab-term">ليس:</span> فعل ماضٍ ناقص جامد مبني على الفتح.</div>
+      <div class="irab-item"><span class="irab-term">في خيره:</span> جار ومجرور متعلقان بخبر "ليس" المقدَّم.</div>
+      <div class="irab-item"><span class="irab-term">شرٌّ:</span> اسم "ليس" مؤخر مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">يكدرهُ:</span> فعل مضارع مرفوع، فاعله مستتر يعود على "شرّ"، والهاء مفعول به يعود على "خيره"، والجملة نعت لـ"شرّ".</div>
+      <div class="irab-item"><span class="irab-term">على الصديق:</span> جار ومجرور متعلقان بالفعل "يكدر".</div>
+      <div class="irab-item"><span class="irab-term">ولا في صفوهِ:</span> الواو عاطفة، "لا" نافية، "في صفوه" جار ومجرور متعلقان بخبر محذوف مقدم.</div>
+      <div class="irab-item"><span class="irab-term">كدرُ:</span> مبتدأ مؤخر مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الجناس الاشتقاقي بين "يكدرهُ" و"كدرُ":</span> تكرار المادة اللغوية نفسها في الشطرين يخلق تماسكاً صوتياً بين نفي وجود الشرّ في الخير ونفي وجود الكدر في الصفو، فيوحّد الفكرتين معاً في نسيج واحد.</div>
+      <div class="balagha-item"><span class="balagha-term">النفي المزدوج لتوكيد الخلوص:</span> نفي الشرّ عن الخير، ونفي الكدر عن الصفو، أسلوبان متوازيان ينفيان الشائبة من ناحيتين مختلفتين (فعل الخير من جهة، وطبيعة العلاقة من جهة أخرى)، فيحقق توكيداً مضاعفاً لخلوص شخصية الممدوح.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>ينتقل البيت من وصف سلوك الكرم المادي (الأبيات ٦-٨) إلى وصف الجانب الأخلاقي في العلاقات الإنسانية (نقاء الصداقة)، فيوسّع بذلك مفهوم "الخير" ليشمل الطبع لا الفعل فقط.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار جذر (ك-د-ر) في الشطرين تناغماً صوتياً يُحسّ وكأنه صدى داخلي للبيت، وهو ما يعزز أثر التوكيد النفسي على معنى الصفاء.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v10">
+  <div class="verse-header" onclick="toggleVerse('v10')">
+    <span class="verse-number">١٠</span>
+    <span class="verse-text">طاوي المصير، على العزاءِ منصلتٌ <span class="hemistich-separator">●</span> بالقومِ ليلة لا ماءٌ ولا شجرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يصفه بأنه خميص البطن (طاوي المصير)، متسلّح بالصبر والعزيمة (على العزاء منصلت)، رافق القوم في ليلة قاسية خالية من الماء والشجر، أي في أشد الظروف الصحراوية قسوة.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">طاوي المصير:</span> ضامر البطن، من "الطيّ" (الجوع أو ضمور البطن) و"المصير" (المِعَى)، صفة تدل على قلة الأكل وخفة الجسم استعداداً للمشقة.</div>
+      <div class="vocab-item"><span class="vocab-term">العزاءِ:</span> الصبر والتجلّد.</div>
+      <div class="vocab-item"><span class="vocab-term">منصلتٌ:</span> ماضٍ مستمر، جادّ العزيمة، من "الانصلات" وهو المضيّ بحدّة وسرعة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">طاوي:</span> خبر لمبتدأ محذوف تقديره "هو"، مرفوع وعلامة رفعه الضمة المقدرة (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">المصير:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">على العزاءِ:</span> جار ومجرور متعلقان بـ"منصلت".</div>
+      <div class="irab-item"><span class="irab-term">منصلتٌ:</span> خبر ثانٍ مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">بالقومِ:</span> جار ومجرور متعلقان بـ"منصلت".</div>
+      <div class="irab-item"><span class="irab-term">ليلة:</span> ظرف زمان منصوب متعلق بـ"منصلت".</div>
+      <div class="irab-item"><span class="irab-term">لا ماءٌ:</span> "لا" نافية للجنس أو عاملة عمل ليس، و"ماءٌ" اسمها مرفوع على إهمالها (أو مبتدأ في جملة اسمية نعت لـ"ليلة").</div>
+      <div class="irab-item"><span class="irab-term">ولا شجرُ:</span> الواو عاطفة، معطوفة على "لا ماء" بنفس التركيب.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الكناية الجسدية عن الجَلَد بـ"طاوي المصير":</span> وصف ضمور البطن كناية عن قلة الأكل واحتمال المشقة والاستعداد الدائم للسفر والحرب، وهي صفة جسدية تحمل دلالة أخلاقية-سلوكية (الزهد في الترف طلباً للمروءة).</div>
+      <div class="balagha-item"><span class="balagha-term">تصوير قسوة المكان بنفي عنصري الحياة الأساسيين (الماء والشجر):</span> اختيار الشاعر نفي عنصرين لا غنى عنهما في الصحراء (الماء للشرب، الشجر للظل والوقود) يرسم أقسى صورة ممكنة للمكان القفر، فيبرز بذلك مدى صلابة الممدوح الذي يواجه هذه الظروف بثبات.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>ينتقل البيت من وصف الكرم والصداقة (الأبيات ٦-٩) إلى صفة جديدة هي احتمال المشقة والصبر، ممهداً للانتقال نحو أبيات الشجاعة والفروسية في المعارك التي ستتوالى لاحقاً.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار "لا... ولا" في الشطر الثاني إيقاعاً نافياً متتابعاً يُحسّ معه فراغ المكان وخُلوّه، محاكياً بذلك المعنى صوتياً.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v11">
+  <div class="verse-header" onclick="toggleVerse('v11')">
+    <span class="verse-number">١١</span>
+    <span class="verse-text">لا تأمنُ البازلُ الكوماءُ ضربتهُ <span class="hemistich-separator">●</span> بالمشرفيِّ إذا ما اخروطَ السفرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>حتى الناقة القوية الضخمة (البازل الكوماء) لا تأمن ضربته بسيفه المشرفي إذا طال السفر واشتدت وطأته، أي أنه في اللحظات الحرجة قد ينحر حتى أقوى الإبل بسيفه دون تردد لإطعام رفاقه.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">البازلُ:</span> الناقة التي دخلت في السنة التاسعة وتمّت قوتها، أي في أوج نضجها وقوتها.</div>
+      <div class="vocab-item"><span class="vocab-term">الكوماءُ:</span> عظيمة السنام، صفة تدل على ضخامة الناقة وقيمتها.</div>
+      <div class="vocab-item"><span class="vocab-term">المشرفيِّ:</span> نسبة إلى "مشارف الشام"، وهي سيوف معروفة بجودتها، فيُطلق "المشرفي" على السيف الجيد عموماً.</div>
+      <div class="vocab-item"><span class="vocab-term">اخروطَ:</span> طال، من "اخروّط" أو "اجلوّذ" بمعنى امتدّ وطال (كما ورد في الشرح المرفق بالنص الأصلي).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لا تأمنُ:</span> "لا" نافية، "تأمنُ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">البازلُ:</span> فاعل "تأمن" مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">الكوماءُ:</span> نعت لـ"البازل" مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">ضربتهُ:</span> مفعول به منصوب لـ"تأمن"، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">بالمشرفيِّ:</span> جار ومجرور متعلقان بمحذوف حال من "ضربته" أو بالمصدر "ضربة" نفسه.</div>
+      <div class="irab-item"><span class="irab-term">إذا ما:</span> ظرفية شرطية، "ما" زائدة.</div>
+      <div class="irab-item"><span class="irab-term">اخروطَ:</span> فعل ماضٍ مبني على الفتح في محل جزم فعل الشرط.</div>
+      <div class="irab-item"><span class="irab-term">السفرُ:</span> فاعل "اخروط" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">تصعيد الصورة من الكرم إلى الحسم (استمرار الفكرة من البيت الثامن):</span> يعيد هذا البيت فكرة نحر المطية من البيت الثامن لكن بصورة أشد قوة (ناقة "بازل كوماء" أي في أوج قوتها) وبأداة أكثر حدّة (السيف المشرفي)، فيصعّد الصورة من "الجود بالمطية عند الحاجة" إلى "القدرة الحاسمة غير المتوانية".</div>
+      <div class="balagha-item"><span class="balagha-term">التشخيص في "لا تأمنُ":</span> إسناد فعل "الأمان" (وهو شعور) إلى الناقة يمنحها بعداً شبه إنساني، فيصوّر هيبة الممدوح وكأنها تسري حتى في نفوس الحيوانات القوية التي تخشى بأسه.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يواصل البيت خط "الجَلَد والحسم" الذي بدأ في البيت العاشر، ويعمّق فكرة الجود الحاسم غير المتردد التي بدأت في البيت الثامن، ليشكل الثلاثة أبيات (٨، ١٠، ١١) معاً نسيجاً متصاعداً في صورة الكرم القاسي.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يبرز جرس السين والراء في "المشرفيّ" و"السفر" صلابة صوتية توافق حدة السيف وطول المسافة، بينما يطيل الفعل "اخروط" بحروفه الممدودة إيحاء صوتياً بمعنى الطول نفسه.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v12">
+  <div class="verse-header" onclick="toggleVerse('v12')">
+    <span class="verse-number">١٢</span>
+    <span class="verse-text">وتكظمُ الشولُ منه حين تبصرهُ <span class="hemistich-separator">●</span> حتى تقطع في أعناقها الجررُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>تكظم النوق (تحبس نفَسها من الخوف أو الفزع) حين تراه، حتى تكاد الحبال (الجرر) المربوطة في أعناقها تنقطع من شدة توترها وجذبها نفسها بعيداً عنه، وهي صورة مبالغ فيها لهيبته.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">تكظمُ:</span> تحبس وتكتم (من الكظم: حبس الغيظ أو النفَس)، هنا بمعنى توتر النوق وتحفزها خوفاً.</div>
+      <div class="vocab-item"><span class="vocab-term">الجررُ:</span> جمع "جرير"، وهو الحبل الذي يُقاد به البعير من عنقه.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">وتكظمُ:</span> الواو عاطفة، "تكظمُ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">الشولُ:</span> فاعل مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">منه:</span> جار ومجرور متعلقان بالفعل "تكظم".</div>
+      <div class="irab-item"><span class="irab-term">حين:</span> ظرف زمان منصوب متعلق بـ"تكظم".</div>
+      <div class="irab-item"><span class="irab-term">تبصرهُ:</span> فعل مضارع مرفوع، فاعله مستتر يعود على "الشول"، والهاء مفعول به، والجملة في محل جر مضاف إليه لـ"حين".</div>
+      <div class="irab-item"><span class="irab-term">حتى:</span> حرف غاية وجر.</div>
+      <div class="irab-item"><span class="irab-term">تقطع:</span> فعل مضارع منصوب بـ"أن" مضمرة بعد "حتى"، أو مرفوع على الاستئناف.</div>
+      <div class="irab-item"><span class="irab-term">في أعناقها:</span> جار ومجرور متعلقان بالفعل "تقطع".</div>
+      <div class="irab-item"><span class="irab-term">الجررُ:</span> فاعل "تقطع" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">المبالغة الفنية في هيبة الممدوح:</span> صورة انقطاع الحبال من فرط توتر الإبل عند رؤيته مبالغة متعمدة (ضرب من الإغراق) تهدف إلى تجسيم صفة الهيبة والحزم بشكل حسي مبالغ فيه، وهو أسلوب معروف في المديح الجاهلي لترسيخ صورة القوة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>استمرار مباشر لصورة البيت الحادي عشر (الناقة التي لا تأمن ضربته)، فيُبقي البيتان معاً على نفس المشهد (علاقة الممدوح بإبل القوم) موسّعين دلالته نحو هيبة الحسم.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>القاف والطاء في "تقطع" حرفان شديدان يحاكيان صوتياً فعل الانقطاع المفاجئ الموصوف في الشطر الثاني.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v13">
+  <div class="verse-header" onclick="toggleVerse('v13')">
+    <span class="verse-number">١٣</span>
+    <span class="verse-text">تكفيه حزةُ فلذٍ إنْ ألمَّ بها <span class="hemistich-separator">●</span> من الشواءِ، ويكفي شربهُ الغمرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يصفه بالقناعة: تكفيه قطعة صغيرة من كبد مشوي إن ألمّ بها (تناولها)، ويكفيه من الشراب الجرعة اليسيرة (الغمر)، أي أنه زاهد في الترف رغم قدرته وكرمه على غيره.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">حزةُ فلذٍ:</span> "الحزّة" القطعة المقطوعة، و"الفِلذ" قطعة من الكبد، أي قطعة صغيرة من كبد مشوي.</div>
+      <div class="vocab-item"><span class="vocab-term">ألمَّ بها:</span> تناولها أو أصابها، من "الإلمام" بمعنى المسّ أو التناول اليسير.</div>
+      <div class="vocab-item"><span class="vocab-term">الغمرُ:</span> القدر اليسير من الماء أو الشراب، ما يملأ قعر الإناء فقط.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">تكفيه:</span> فعل مضارع مرفوع، والهاء مفعول به مقدم.</div>
+      <div class="irab-item"><span class="irab-term">حزةُ:</span> فاعل "تكفي" مرفوع وعلامة رفعه الضمة (مؤخر).</div>
+      <div class="irab-item"><span class="irab-term">فلذٍ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">إنْ ألمَّ:</span> "إنْ" شرطية جازمة، "ألمَّ" فعل ماضٍ في محل جزم فعل الشرط.</div>
+      <div class="irab-item"><span class="irab-term">بها:</span> جار ومجرور متعلقان بـ"ألمّ".</div>
+      <div class="irab-item"><span class="irab-term">من الشواءِ:</span> جار ومجرور متعلقان بمحذوف حال من "حزة".</div>
+      <div class="irab-item"><span class="irab-term">ويكفي:</span> الواو عاطفة، "يكفي" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">شربهُ:</span> مفعول به منصوب مقدم، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">الغمرُ:</span> فاعل "يكفي" مرفوع وعلامة رفعه الضمة (مؤخر).</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التوازي التركيبي في "تكفيه... ويكفي":</span> تكرار الفعل نفسه (يكفي) في الشطرين بترتيب مختلف (تقديم المفعول تارة وتأخيره أخرى) يخلق تماثلاً موسيقياً وإيقاعاً هادئاً يناسب المعنى المراد وهو القناعة والاعتدال.</div>
+      <div class="balagha-item"><span class="balagha-term">المفارقة الضمنية مع أبيات الكرم السابقة:</span> يبرز البيت تناقضاً ظاهرياً (لكنه في الحقيقة تكامل قيمي) بين كرمه الفائض على الآخرين (الأبيات ٦-٨) وزهده الشخصي في مأكله ومشربه، وهذه الثنائية (الجود على الغير، القناعة للنفس) من أرقى صفات الفتوة الجاهلية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">القناعة كصفة مكمّلة للكرم لا مناقضة له:</span> يجمع النقد التراثي بين "الكرم على الغير" و"القناعة في النفس" باعتبارهما وجهين لصفة واحدة هي عزة النفس وترفّعها عن حب الدنيا، وهذا البيت نموذج دقيق لهذا الترابط القيمي في الشعر الجاهلي.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>ينتقل البيت من صورة الهيبة الحادة (البيتين ١١-١٢) إلى صفة أخرى هادئة (القناعة)، محدثاً تنويعاً إيقاعياً ودلالياً يمنع رتابة سرد المناقب.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق التوازي اللفظي "تكفيه... يكفي" جرساً هادئاً متكرراً يوافق موضوع القناعة والاعتدال، بعكس الإيقاع الحاد في الأبيات السابقة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v14">
+  <div class="verse-header" onclick="toggleVerse('v14')">
+    <span class="verse-number">١٤</span>
+    <span class="verse-text">لا يتأرى لما في القدرِ يرقبُهُ <span class="hemistich-separator">●</span> ولا يعضُّ على شرسوفهِ الصفرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>لا يتحبّس أو ينتظر بشرَه ما في القدر من طعام (أي لا يتلهف عليه انتظاراً)، ولا يعضّ الجوع (الصفر) على خاصرته، أي أنه بعيد عن الشره والجوع الملحّ معاً، مكتفٍ عزيز النفس.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">لا يتأرى:</span> لا يتحبّس أو ينتظر بلهفة، من "الإراء" وهو الانتظار عند مكان الطعام (كما ورد في شرح النص الأصلي: يتأرى = يتحبس، من "آرى الدابة" أي محبسها).</div>
+      <div class="vocab-item"><span class="vocab-term">شرسوفهِ:</span> غضروف الأضلاع، والمقصود هنا خاصرته أو بطنه.</div>
+      <div class="vocab-item"><span class="vocab-term">الصفرُ:</span> بحسب المعتقد الشعبي الجاهلي المذكور في شرح النص، حيّة تُزعم أنها تكون في بطن الإنسان الجائع فتعضّ على شرسوفه؛ وهذا معتقد شعبي جاهلي وليس حقيقة علمية، ويُذكر هنا كخلفية ثقافية تفسّر الصورة لا كحقيقة يُقرّها التحليل.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لا يتأرى:</span> "لا" نافية، "يتأرى" فعل مضارع مرفوع وعلامة رفعه الضمة المقدرة.</div>
+      <div class="irab-item"><span class="irab-term">لما:</span> اللام حرف جر، "ما" اسم موصول مبني في محل جر متعلقان بالفعل "يتأرى".</div>
+      <div class="irab-item"><span class="irab-term">في القدرِ:</span> جار ومجرور متعلقان بمحذوف صلة الموصول.</div>
+      <div class="irab-item"><span class="irab-term">يرقبُهُ:</span> فعل مضارع مرفوع، فاعله مستتر، والهاء مفعول به يعود على "ما"، والجملة حال أو توكيد.</div>
+      <div class="irab-item"><span class="irab-term">ولا يعضُّ:</span> الواو عاطفة، "لا" نافية، "يعضُّ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">على شرسوفهِ:</span> جار ومجرور متعلقان بالفعل "يعضّ"، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">الصفرُ:</span> فاعل "يعضّ" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">توظيف المعتقد الشعبي (حية الصفر) للتعبير عن الجوع الشديد:</span> استحضار الشاعر لمعتقد جاهلي شائع (حية تعضّ خاصرة الجائع) يمنح وصف الجوع صورة درامية حسية بدل التجريد اللفظي المباشر، وهو استثمار للموروث الثقافي في خدمة الصورة الشعرية.</div>
+      <div class="balagha-item"><span class="balagha-term">النفي المزدوج المتكامل مع البيت السابق:</span> يواصل هذا البيت نفي طرفي الشره (لا يتأرى/لا يتلهف على الطعام) والجوع الملحّ (لا يعضّه الصفر)، فيُتمّم مع البيت الثالث عشر صورة متكاملة لرجل معتدل لا شَرِه ولا مُعْوِز.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يختم هذا البيت مقطع القناعة الذي بدأ في البيت الثالث عشر، ويمهّد للانتقال نحو صفات جسدية وحركية جديدة (الرشاقة والفروسية) في الأبيات التالية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>تكرار حرف الصاد في "شرسوفه" و"الصفر" يخلق جرساً حادّاً يوافق قسوة الصورة المتخيّلة (عضّ الحيّة)، فيعزز الإحساس الصوتي بالألم الموصوف.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- الحركة الثالثة -->
+<!-- ============================================================ -->
+<div class="movement-header">
+  <div class="badge">الحركة الثالثة (الأبيات ١٥ – ١٨): الهيئة الجسدية، الفروسية الليلية، ومفارقة الفناء</div>
+  <p>تنتقل القصيدة من المناقب الخُلقية إلى وصف الهيئة الجسدية والحضور الليلي المضيء، ثم تُختتم الحركة بأول إشارة صريحة إلى الموت والفراق عبر استعارة "الرمح ذي النصلين المنكسر"، محدثة انعطافاً مفصلياً نحو التذكر المباشر للحادثة.</p>
+</div>
+
+<div class="verse-card" id="v15">
+  <div class="verse-header" onclick="toggleVerse('v15')">
+    <span class="verse-number">١٥</span>
+    <span class="verse-text">لا يغمزُ الساقَ من أينٍ ولا وصبٍ <span class="hemistich-separator">●</span> ولا يزالُ أمامَ القومِ يقتفرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>لا يظهر ضعفاً في ساقه من تعب أو وجع، ولا يزال في مقدمة القوم يقتفي الأثر (يقود المسير)، أي أن قوته البدنية لا تخذله مهما اشتد السفر.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">يغمزُ الساقَ:</span> يُظهر ضعفاً أو عرجاً فيها، كناية عن التعب البدني.</div>
+      <div class="vocab-item"><span class="vocab-term">أينٍ:</span> إعياء وتعب شديد.</div>
+      <div class="vocab-item"><span class="vocab-term">وصبٍ:</span> مرض أو وجع مستمر.</div>
+      <div class="vocab-item"><span class="vocab-term">يقتفرُ:</span> يتتبع الأثر ويقود المسير، من "القفر" وتتبع الآثار في الصحراء.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لا يغمزُ:</span> "لا" نافية، "يغمزُ" فعل مضارع مرفوع، فاعله مستتر يعود على الممدوح.</div>
+      <div class="irab-item"><span class="irab-term">الساقَ:</span> مفعول به منصوب.</div>
+      <div class="irab-item"><span class="irab-term">من أينٍ:</span> جار ومجرور متعلقان بالفعل "يغمز".</div>
+      <div class="irab-item"><span class="irab-term">ولا وصبٍ:</span> الواو عاطفة، "لا" زائدة لتوكيد النفي، "وصبٍ" معطوف على "أينٍ" مجرور.</div>
+      <div class="irab-item"><span class="irab-term">ولا يزالُ:</span> الواو عاطفة، "لا يزال" فعل مضارع ناقص من أخوات "كان"، واسمه ضمير مستتر.</div>
+      <div class="irab-item"><span class="irab-term">أمامَ القومِ:</span> ظرف مكان منصوب متعلق بالخبر "يقتفر"، و"القوم" مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">يقتفرُ:</span> فعل مضارع مرفوع في محل نصب خبر "لا يزال"، فاعله مستتر.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الكناية الجسدية عن الصلابة بـ"لا يغمز الساق":</span> نفي علامة الضعف الجسدية الظاهرة (عرج الساق) كناية عن القوة البدنية الشاملة والقدرة على الاحتمال دون إرهاق.</div>
+      <div class="balagha-item"><span class="balagha-term">دلالة الريادة في "أمام القوم":</span> ذكر موقعه المكاني (في المقدمة) يحمل دلالة رمزية على الزعامة والقيادة لا مجرد الموقع الجسدي، فهو يقود بجسده كما يقود بمكانته.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يفتتح هذا البيت الحركة الثالثة بربط صفة القوة الجسدية بموقع القيادة الاجتماعية، منتقلاً من مناقب الكرم والقناعة (الحركة الثانية) إلى صفات الفروسية والريادة الحركية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار حرف اللام في "لا... لا... لا يزال" نغمة نافية متصلة تعزز معنى الثبات المستمر رغم توالي أسباب الضعف المحتملة (الإعياء، الوجع).</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v16">
+  <div class="verse-header" onclick="toggleVerse('v16')">
+    <span class="verse-number">١٦</span>
+    <span class="verse-text">لا يصعبُ الأمرَ إلا ريثَ يركبهُ ... وكل شيءٍ سوى الفحشاءِ يأتمر</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>لا يجد الأمر الصعب صعوبة إلا لحظة الشروع فيه (قبل أن يركبه ويتمرّس به)، وكل شيء ما عدا الفحشاء (المنكر من القول والفعل) فهو مستعدّ لأن يأتمر به وينفّذه، أي أنه واسع الحيلة إلا فيما يخالف المروءة والعفة.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">ريثَ:</span> مقدار، بمعنى "قدر ما"، ظرف زمان.</div>
+      <div class="vocab-item"><span class="vocab-term">الفحشاءِ:</span> المنكر والقبيح من القول أو الفعل.</div>
+      <div class="vocab-item"><span class="vocab-term">يأتمر:</span> يطيع وينقاد وينفّذ، من "الائتمار" بمعنى قبول الأمر والانصياع له.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لا يصعبُ:</span> "لا" نافية، "يصعبُ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">الأمرَ:</span> مفعول به منصوب (على تضمين الفعل معنى التعدي)، أو فاعل مؤخر بحسب رواية أخرى مذكورة في النص الأصلي.</div>
+      <div class="irab-item"><span class="irab-term">إلا:</span> أداة استثناء.</div>
+      <div class="irab-item"><span class="irab-term">ريثَ:</span> ظرف زمان منصوب متعلق بالفعل "يصعب"، وهو مستثنى مفرغ.</div>
+      <div class="irab-item"><span class="irab-term">يركبهُ:</span> فعل مضارع مرفوع، فاعله مستتر، والهاء مفعول به، والجملة في محل جر مضاف إليه لـ"ريث".</div>
+      <div class="irab-item"><span class="irab-term">وكل:</span> الواو استئنافية، "كلّ" مبتدأ مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">شيءٍ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">سوى الفحشاءِ:</span> "سوى" ظرف مكان بمعنى الاستثناء منصوب متعلق بمحذوف حال، و"الفحشاء" مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">يأتمر:</span> فعل مضارع مرفوع، فاعله مستتر يعود على الممدوح، والجملة في محل رفع خبر "كلّ".</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الاستثناء المزدوج (زمني ثم قيمي):</span> يبني البيت استثناءين متتاليين مختلفي الطبيعة: استثناء زمني (لحظة الشروع فقط تصعب الأمور) ثم استثناء قيمي (كل شيء إلا الفحشاء)، فيحصر الشاعر مساحة "الصعوبة" و"الرفض" في نقطتين محددتين بدقة، تاركاً ما عداهما مساحة رحبة من الإقدام والطاعة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">حدود المروءة الجاهلية: الشجاعة المقيَّدة بالقيم لا المطلقة:</span> يوضح هذا البيت أن شجاعة الممدوح وإقدامه ليسا فوضويين بلا ضابط، بل مقيّدان بحدود أخلاقية صريحة (الفحشاء)، وهذا يفنّد الصورة النمطية المبسّطة عن "الفروسية الجاهلية" بوصفها قوة عمياء، ويُظهر أن منظومة المروءة كانت تشترط توجيه القوة أخلاقياً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يضيف البيت بُعداً أخلاقياً-قيمياً إلى صفات الشجاعة والإقدام الجسدي التي بدأت في البيت الخامس عشر، فيربط القوة البدنية بضابط أخلاقي صريح.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يتكرر جذر (ص-ع-ب) وما يقابله من معنى السهولة الضمنية في تناغم صوتي هادئ، بينما يبرز الطباق الدلالي بين "كل شيء" و"الفحشاء" (الشمول مقابل الاستثناء الوحيد) توازناً بنيوياً في البيت.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v17">
+  <div class="verse-header" onclick="toggleVerse('v17')">
+    <span class="verse-number">١٧</span>
+    <span class="verse-text">مهفهفٌ، أهضمُ الكشحينِ، منخرقٌ <span class="hemistich-separator">●</span> عنه القميصُ، لسيرِ الليلِ محتقر</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يصفه بأنه رشيق البدن (مهفهف)، ضامر الخاصرتين (أهضم الكشحين)، متمزّق القميص من كثرة الحركة والسفر، مستهين بمشقة السير الليلي (يحتقرها ولا يعبأ بها).</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">مهفهفٌ:</span> رشيق القوام، خفيف اللحم، صفة تدل على البنية الرياضية النحيلة القوية.</div>
+      <div class="vocab-item"><span class="vocab-term">أهضمُ الكشحينِ:</span> ضامر الخاصرتين، من علامات الرشاقة واللياقة البدنية.</div>
+      <div class="vocab-item"><span class="vocab-term">منخرقٌ عنه القميصُ:</span> ممزق أو بالٍ من كثرة الحركة العنيفة، إشارة لخشونة العيش وكثرة السفر.</div>
+      <div class="vocab-item"><span class="vocab-term">محتقر:</span> مستصغِر ومستهين، هنا بمعنى أنه يستهين بمشقة السير الليلي ولا يراها عائقاً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">مهفهفٌ:</span> خبر لمبتدأ محذوف تقديره "هو"، مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">أهضمُ:</span> خبر ثانٍ مرفوع (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">الكشحينِ:</span> مضاف إليه مجرور بالياء لأنه مثنى.</div>
+      <div class="irab-item"><span class="irab-term">منخرقٌ:</span> خبر ثالث مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">عنه:</span> جار ومجرور متعلقان بـ"منخرقٌ".</div>
+      <div class="irab-item"><span class="irab-term">القميصُ:</span> فاعل لاسم المفعول "منخرقٌ" مرفوع (على إعمال اسم المفعول).</div>
+      <div class="irab-item"><span class="irab-term">لسيرِ:</span> جار ومجرور متعلقان بـ"محتقر".</div>
+      <div class="irab-item"><span class="irab-term">الليلِ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">محتقر:</span> خبر رابع مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">تراكم الصفات الجسدية (مهفهف، أهضم، منخرق) في بيت واحد:</span> تكديس أربع صفات وصفية متتالية في بيت واحد يخلق كثافة وصفية سريعة الوتيرة، تحاكي بذلك أسلوبياً خفة الجسم ورشاقة الحركة الموصوفة نفسها.</div>
+      <div class="balagha-item"><span class="balagha-term">التناقض الدلالي بين "منخرقٌ القميص" والهيبة السابقة:</span> يكسر هذا التفصيل الواقعي (القميص الممزق) الصورة المثالية المطلقة، فيمنح الوصف واقعية إضافية: بطل حقيقي يعيش خشونة السفر، لا شخصية مثالية مجردة من التفاصيل المادية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يقدّم هذا البيت الوصف الجسدي الوحيد المباشر والمكثف في القصيدة، فيربط الصفات الخُلقية السابقة (الكرم، الشجاعة، القناعة) بصورة بصرية محددة للجسد الذي حملها، قُبيل الانتقال إلى مشهد الفروسية الليلية في البيت التالي.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار الهاء المتتالية في "مهفهفٌ" جرساً خفيفاً متكرراً يحاكي صوتياً معنى الخفة والرشاقة، وهو من أمثلة التناغم بين الصوت والدلالة (musical iconicity) في الشعر العربي القديم.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v18">
+  <div class="verse-header" onclick="toggleVerse('v18')">
+    <span class="verse-number">١٨</span>
+    <span class="verse-text">تلقاهُ كالكوكبِ الدريِّ منصلتاً <span class="hemistich-separator">●</span> بالقومِ ليلةَ لا نجمٌ ولا قمرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>تجده في هيئته وحضوره كالكوكب المضيء المتلألئ، ماضياً بالقوم في ليلة معتمة خالية من النجوم والقمر، أي أنه مصدر الهداية والضياء الوحيد في أحلك الظروف وأشد الليالي ظلاماً.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">الكوكبِ الدريِّ:</span> النجم شديد الإضاءة والتلألؤ، وصف قرآني الأصل استُخدم شعرياً هنا كتشبيه بالغ السطوع.</div>
+      <div class="vocab-item"><span class="vocab-term">منصلتاً:</span> ماضياً بحدة وعزيمة (تكرار الوصف من البيت العاشر "على العزاء منصلت")، ما يشير إلى ترابط دلالي بين المقطعين.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">تلقاهُ:</span> فعل مضارع مرفوع، فاعله ضمير مستتر تقديره أنت، والهاء مفعول به.</div>
+      <div class="irab-item"><span class="irab-term">كالكوكبِ:</span> جار ومجرور متعلقان بمحذوف حال (أداة التشبيه والمشبه به).</div>
+      <div class="irab-item"><span class="irab-term">الدريِّ:</span> نعت لـ"الكوكب" مجرور.</div>
+      <div class="irab-item"><span class="irab-term">منصلتاً:</span> حال منصوبة من الهاء في "تلقاه"، وعلامة نصبها الفتحة.</div>
+      <div class="irab-item"><span class="irab-term">بالقومِ:</span> جار ومجرور متعلقان بـ"منصلتاً".</div>
+      <div class="irab-item"><span class="irab-term">ليلةَ:</span> ظرف زمان منصوب متعلق بـ"منصلتاً".</div>
+      <div class="irab-item"><span class="irab-term">لا نجمٌ:</span> "لا" نافية للجنس، "نجمٌ" اسمها مبني على الفتح أو مرفوع على الإهمال، والجملة في محل جر نعت لـ"ليلة".</div>
+      <div class="irab-item"><span class="irab-term">ولا قمرُ:</span> الواو عاطفة، معطوفة على "لا نجم" بنفس التركيب.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التشبيه التمثيلي "كالكوكب الدريّ":</span> تشبيه بليغ يصوّر الممدوح مصدراً للنور والهداية وسط الظلام، وهو تشبيه ذو أصل قرآني (وصف النجم الثاقب في سورة النور) استُدعي هنا شعرياً ليمنح صفة الهداية بُعداً كونياً متسامياً.</div>
+      <div class="balagha-item"><span class="balagha-term">تصعيد الصورة بنفي كل مصادر الضوء الأخرى:</span> نفي وجود النجم والقمر معاً في تلك الليلة يجعل الممدوح المصدر الوحيد المتبقي للضياء، وهي مبالغة بلاغية (استغراق النفي) تُعلي من قدره بجعله بديلاً كاملاً عن كل مصادر النور الطبيعية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">ذروة الحركة الوصفية قبل الانعطاف نحو الفقد:</span> يمثل هذا البيت الذروة الجمالية لحركة المديح كلها (من البيت السادس إلى هنا)، إذ يبلغ تصوير الممدوح أعلى درجات السموّ (تشبيهه بالكوكب)، تمهيداً لانعطاف حاد ومفاجئ نحو الفقد في البيت التالي مباشرة، وهذا التباين البنيوي (الذروة ثم السقوط الفوري) يعمّق أثر المفارقة التراجيدية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يختم هذا البيت حركة المديح كلها (الأبيات ٦-١٨) بأسمى صورها، ليأتي البيت التالي مباشرة بانعطاف صادم نحو حقيقة الفراق، محدثاً أثراً بنيوياً قوياً في تركيب القصيدة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار "لا... ولا" الرافل من الأبيات السابقة (البيت العاشر) تناغماً بنيوياً بين مشهدي "الليلة القفراء" و"الليلة المعتمة"، فيربط الإيقاع الصوتي بين المقطعين ربطاً دلالياً محكماً.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- الحركة الرابعة -->
+<!-- ============================================================ -->
+<div class="movement-header">
+  <div class="badge">الحركة الرابعة (الأبيات ١٩ – ٢٤): لحظة الفقد وحادثة الخيانة</div>
+  <p>انعطاف حاد نحو التصريح بالفراق عبر استعارة الرمح المنكسر، ثم انتقال إلى وصف طبيعته القتالية المهيبة، وصولاً إلى ذروة القصيدة الدرامية: الكشف عن خيانة "نفيل" التي كانت السبب المباشر في مقتله.</p>
+</div>
+
+<div class="verse-card" id="v19">
+  <div class="verse-header" onclick="toggleVerse('v19')">
+    <span class="verse-number">١٩</span>
+    <span class="verse-text">عشنا بذلك دهراً ثم فارقنا <span class="hemistich-separator">●</span> كذلكَ الرمحُ ذو النصلينِ ينكسرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>عشنا زمناً طويلاً على تلك الحال (من العشرة والصفات المذكورة)، ثم فارقنا (مات)، وهكذا شأن الرمح ذي النصلين القوي المتين، فإنه رغم صلابته يُكسر في النهاية، أي أن القوة والكمال لا يمنعان قدر الفناء.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">الرمحُ ذو النصلينِ:</span> رمح ذو سنانين أو حدّين، صفة تدل على قوة السلاح ومتانته الاستثنائية، والرمح المزدوج النصل رمز للصلابة القصوى في السلاح الجاهلي.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">عشنا:</span> فعل ماضٍ مبني على السكون لاتصاله بضمير الرفع "نا"، والضمير فاعل.</div>
+      <div class="irab-item"><span class="irab-term">بذلك:</span> جار ومجرور متعلقان بالفعل "عشنا".</div>
+      <div class="irab-item"><span class="irab-term">دهراً:</span> ظرف زمان منصوب متعلق بـ"عشنا".</div>
+      <div class="irab-item"><span class="irab-term">ثم:</span> حرف عطف يفيد الترتيب والتراخي.</div>
+      <div class="irab-item"><span class="irab-term">فارقنا:</span> فعل ماضٍ مبني على الفتح، والفاعل ضمير مستتر يعود على الممدوح، ونا مفعول به في محل نصب.</div>
+      <div class="irab-item"><span class="irab-term">كذلكَ:</span> الكاف حرف تشبيه وجر، "ذلك" اسم إشارة مبني في محل جر، والجار والمجرور متعلقان بمحذوف خبر مقدم.</div>
+      <div class="irab-item"><span class="irab-term">الرمحُ:</span> مبتدأ مؤخر مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">ذو:</span> نعت لـ"الرمح" مرفوع بالواو لأنه من الأسماء الخمسة (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">النصلينِ:</span> مضاف إليه مجرور بالياء لأنه مثنى.</div>
+      <div class="irab-item"><span class="irab-term">ينكسرُ:</span> فعل مضارع مرفوع في محل رفع خبر ثانٍ للمبتدأ "الرمحُ"، أو الجملة الاسمية بتمامها خبر لمبتدأ محذوف.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التشبيه التمثيلي الفلسفي "كذلك الرمح ذو النصلين ينكسر":</span> استعارة تمثيلية عميقة تقارن مصير الإنسان القوي بمصير أقوى الأسلحة، لتقرّر حقيقة كونية: أن الصلابة القصوى لا تمنع الكسر النهائي؛ وهذا استخدام الرمز المادي (السلاح) للتعبير عن حتمية فلسفية مجردة (الفناء)، وهو من أرقى صور الحكمة الجاهلية المكثفة في بيت واحد.</div>
+      <div class="balagha-item"><span class="balagha-term">التصريح المباشر بالفقد بعد طول تلميح:</span> بعد ثلاثة عشر بيتاً من المديح غير المباشر، يأتي الفعل "فارقنا" كأول تصريح صريح بالموت منذ البيت الأول، محدثاً انعطافاً بنيوياً حاداً في مسار القصيدة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">المفصل البنائي المركزي للقصيدة:</span> هذا البيت هو نقطة الارتكاز التي تنقل القصيدة من "زمن المديح" (الماضي المستمر الموصوف بأفعال مضارعة تفيد الاستمرارية: "لا تغبّ"، "لا يصعب"، "لا يغمز") إلى "زمن الفقد" (الماضي المنجز: "فارقنا")؛ وهذا التحول الزمني-النحوي يعكس بنيوياً التحول من "الحياة كحالة دائمة" إلى "الموت كحدث واقع منجز".</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يمثل هذا البيت المفصل الأهم في بنية القصيدة كلها: نهاية حركة المديح المطلق (الأبيات ٦-١٨) وبداية العودة إلى واقع الفقد والحادثة، ممهداً للأبيات التالية التي ستعود لتفاصيل الشجاعة القتالية ثم الخيانة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يبرز الطباق الحاد بين "عشنا... دهراً" (الاستمرار الطويل) و"ثم فارقنا" (الانقطاع المفاجئ) توتراً إيقاعياً يحاكي صدمة الانتقال من الحياة إلى الفقد؛ كما يعزز صوت الراء المكرر في "الرمح"، "النصلين"، "ينكسر" جرساً قاسياً يوافق معنى الكسر والقطيعة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v20">
+  <div class="verse-header" onclick="toggleVerse('v20')">
+    <span class="verse-number">٢٠</span>
+    <span class="verse-text">أخو حروبٍ ومكاسبٌ إذا عدموا <span class="hemistich-separator">●</span> وفي المخافةِ منه الجدُّ والحذرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>يعود الشاعر بعد بيت المفارقة إلى نسق المديح: كان صاحب حروب (فارساً مقاتلاً)، ومصدر كسب ورزق للقوم إذا أعوزهم المال، وفي مواطن الخوف كان هو الجاد الحذر المتيقظ الذي يحمي الجماعة.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">أخو حروبٍ:</span> صاحب حروب ومجرّب فيها، تعبير كنائي عن الفروسية والخبرة القتالية.</div>
+      <div class="vocab-item"><span class="vocab-term">مكاسبٌ:</span> مصدر رزق وكسب للقوم، إشارة إلى غاراته وسعيه الذي يعود بالخير على قومه.</div>
+      <div class="vocab-item"><span class="vocab-term">عدموا:</span> افتقروا وأعوزهم المال.</div>
+      <div class="vocab-item"><span class="vocab-term">الجدُّ:</span> الجدية والحزم، ضد الهزل.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">أخو:</span> خبر لمبتدأ محذوف تقديره "هو"، مرفوع بالواو لأنه من الأسماء الخمسة (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">حروبٍ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">ومكاسبٌ:</span> الواو عاطفة، "مكاسبٌ" معطوف على "أخو" أو خبر ثانٍ مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">إذا:</span> ظرفية شرطية غير جازمة.</div>
+      <div class="irab-item"><span class="irab-term">عدموا:</span> فعل ماضٍ مبني على الضم، والواو فاعل، والجملة في محل جر مضاف إليه لـ"إذا".</div>
+      <div class="irab-item"><span class="irab-term">وفي المخافةِ:</span> الواو عاطفة، جار ومجرور متعلقان بخبر محذوف مقدم.</div>
+      <div class="irab-item"><span class="irab-term">منه:</span> جار ومجرور متعلقان بمحذوف حال أو بـ"الجدّ".</div>
+      <div class="irab-item"><span class="irab-term">الجدُّ:</span> مبتدأ مؤخر مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">والحذرُ:</span> الواو عاطفة، "الحذرُ" معطوف على "الجدّ" مرفوع.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الازدواج بين البذل والحماية (مكاسب/جدّ وحذر):</span> يجمع البيت بين وظيفتين اجتماعيتين للفارس: الإعالة الاقتصادية (مكاسب للقوم) والحماية الأمنية (الجدّ والحذر وقت الخوف)، فيرسم صورة شاملة لدور الفارس الحامي المعيل معاً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>بعد الانعطاف نحو الفقد في البيت التاسع عشر، يعود هذا البيت لاستكمال سرد المناقب (الفروسية والحماية)، وهو نمط شائع في المراثي الطويلة: تعليق مؤقت لمسار الحدث للعودة إلى تعداد الصفات قبل استئناف السرد.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق التوازي بين "أخو حروبٍ" و"مكاسبٌ" في الشطر الأول إيقاعاً تعديدياً هادئاً يستأنف نسق المديح المألوف من الحركة الثانية.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v21">
+  <div class="verse-header" onclick="toggleVerse('v21')">
+    <span class="verse-number">٢١</span>
+    <span class="verse-text">أخو رغائبَ يعطيها ويسألها <span class="hemistich-separator">●</span> يأبى الظلامةَ منه النوفلُ الزفرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>صاحب عطايا كبيرة، يعطيها لغيره ويسألها من غيره أيضاً (أي يمارس تبادل الهبات الكريمة في العرف القبلي)، ويرفض الظلم عنه حتى الرجل الشريف العظيم القدر (النوفل الزفر) هيبةً منه.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">أخو رغائبَ:</span> صاحب عطايا جليلة القدر.</div>
+      <div class="vocab-item"><span class="vocab-term">النوفلُ:</span> الرجل الكريم الجليل، من أسماء الرجل السخي العظيم.</div>
+      <div class="vocab-item"><span class="vocab-term">الزفرُ:</span> السيد الحامل لأثقال قومه، صفة تدل على عظم الشأن والمسؤولية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">أخو:</span> خبر لمبتدأ محذوف، مرفوع بالواو (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">رغائبَ:</span> مضاف إليه مجرور (ممنوع من الصرف لصيغة منتهى الجموع).</div>
+      <div class="irab-item"><span class="irab-term">يعطيها:</span> فعل مضارع مرفوع، فاعله مستتر، والهاء مفعول به، والجملة حال أو نعت لـ"أخو رغائب".</div>
+      <div class="irab-item"><span class="irab-term">ويسألها:</span> الواو عاطفة، معطوفة على "يعطيها" بنفس التركيب.</div>
+      <div class="irab-item"><span class="irab-term">يأبى:</span> فعل مضارع مرفوع، فاعله يأتي لاحقاً.</div>
+      <div class="irab-item"><span class="irab-term">الظلامةَ:</span> مفعول به منصوب مقدم.</div>
+      <div class="irab-item"><span class="irab-term">منه:</span> جار ومجرور متعلقان بـ"يأبى" أو بمحذوف حال.</div>
+      <div class="irab-item"><span class="irab-term">النوفلُ:</span> فاعل "يأبى" مرفوع (مؤخر).</div>
+      <div class="irab-item"><span class="irab-term">الزفرُ:</span> نعت لـ"النوفل" مرفوع.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الطباق بين "يعطيها" و"يسألها":</span> جمع فعلين متضادين (العطاء والسؤال) لوصف نفس الشخص يبرز مكانته الاجتماعية الرفيعة: فهو يعطي بسخاء ويُقبل منه السؤال دون مذلة، لأن مكانته تحفظ كرامته في الحالين.</div>
+      <div class="balagha-item"><span class="balagha-term">التضخيم بذكر هيبته حتى على "النوفل الزفر":</span> ذكر أن حتى السيد العظيم (النوفل الزفر) يمتنع عن ظلمه يرفع من قدر الممدوح بمقارنته ضمنياً بأعلى طبقات السادة، فيصبح مقياس هيبته هو خشية العظماء أنفسهم منه.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يواصل البيت المديح الاجتماعي (المكانة والهيبة بين السادة) بعد البيت السابق الذي تناول الدور الاقتصادي والحمائي، فيتسع بذلك نطاق الوصف ليشمل المكانة الرمزية-الاجتماعية للممدوح.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق التوازي الصرفي بين "يعطيها" و"يسألها" (نفس الوزن والقافية الداخلية) جرساً متناظراً يعزز الإحساس بالتوازن بين فعلي العطاء والأخذ.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v22">
+  <div class="verse-header" onclick="toggleVerse('v22')">
+    <span class="verse-number">٢٢</span>
+    <span class="verse-text">لا يأمنُ الناسُ ممساهُ ومصبحهُ <span class="hemistich-separator">●</span> من كلِّ فجٍّ وإنْ لم يغزُ ينتظرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>لا يأمن الناس (الأعداء) وقت مسائه وصباحه من كل طريق أو جهة، وإن لم يكن يغزو فعلاً في لحظة ما، فهو منتظِر مترقب دائماً، أي أن هيبته وترقّبه المستمر يبقيان الخصوم في حذر دائم.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">ممساهُ ومصبحهُ:</span> وقت مسائه ووقت صباحه، أي في كل الأوقات.</div>
+      <div class="vocab-item"><span class="vocab-term">فجٍّ:</span> طريق واسع بين جبلين، ويُقصد به هنا الجهات أو الطرق عموماً.</div>
+      <div class="vocab-item"><span class="vocab-term">ينتظرُ:</span> يترقّب ويتحفّز للغزو أو الدفاع، أي في حالة تأهب دائمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لا يأمنُ:</span> "لا" نافية، "يأمنُ" فعل مضارع مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">الناسُ:</span> فاعل مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">ممساهُ:</span> مفعول به منصوب بالفتحة المقدرة، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">ومصبحهُ:</span> الواو عاطفة، معطوف على "ممساه" منصوب.</div>
+      <div class="irab-item"><span class="irab-term">من كلِّ فجٍّ:</span> جار ومجرور متعلقان بالفعل "يأمن"، و"فجٍّ" مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">وإنْ:</span> الواو حالية، "إنْ" شرطية جازمة.</div>
+      <div class="irab-item"><span class="irab-term">لم يغزُ:</span> "لم" حرف جزم ونفي وقلب، "يغزُ" فعل مضارع مجزوم بحذف حرف العلة في محل جزم فعل الشرط.</div>
+      <div class="irab-item"><span class="irab-term">ينتظرُ:</span> فعل مضارع مرفوع (جواب الشرط غير مقترن بالفاء فيبقى مرفوعاً على الاستئناف)، فاعله مستتر.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التعميم الزمني والمكاني ("ممساه ومصبحه"/"كل فجّ"):</span> جمع الشاعر بين الشمول الزمني (المساء والصباح) والشمول المكاني (كل الطرق) ليصوّر حالة الترقب والخوف من الممدوح باعتبارها شاملة لا تنقطع في زمان أو مكان.</div>
+      <div class="balagha-item"><span class="balagha-term">المفارقة الدقيقة بين الفعل والحالة ("وإن لم يغزُ ينتظر"):</span> يميّز الشاعر هنا بين "الغزو الفعلي" و"حالة الترقب الدائمة"، مبيناً أن هيبته لا تعتمد على الفعل المباشر فقط بل على حضوره الرمزي المستمر كتهديد كامن، وهي ملاحظة نفسية دقيقة عن آلية الردع.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يستمر البيت في تصعيد صورة الهيبة القتالية التي بدأت في البيت العشرين، ممهداً للبيت التالي الذي سيقدّم صورة شعرية مركّبة (اليأس والبِشر معاً) تسبق مباشرة الكشف عن الخيانة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق الجناس الجزئي بين "ممساهُ" و"مصبحهُ" (تماثل الوزن الصرفي) توازياً إيقاعياً يعكس الشمول الزمني نفسه المُعبَّر عنه دلالياً.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v23">
+  <div class="verse-header" onclick="toggleVerse('v23')">
+    <span class="verse-number">٢٣</span>
+    <span class="verse-text">كأنه بعدَ صدقِ القومِ أنفسهم <span class="hemistich-separator">●</span> باليأسِ تلمعُ من قدامهِ البشرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>صورة مركّبة صعبة التأويل: كأنه بعد أن صدق القوم أنفسهم (واجهوا الموقف بصدق وشجاعة)، تلمع أمامه (أو من أمامه) البِشرى واليأس معاً، في مزيج من علامات الأمل واستشعار الخطر المحدق، يسبق مباشرة الكشف عن حادثة الخيانة في البيت التالي.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">صدقِ القومِ أنفسهم:</span> مواجهة القوم الموقف بصدق وثبات، تعبير عن الصمود القتالي الجاد لا التراجع.</div>
+      <div class="vocab-item"><span class="vocab-term">تلمعُ:</span> تبرق وتلوح، فعل يوحي بالظهور السريع الخاطف.</div>
+      <div class="vocab-item"><span class="vocab-term">البشرُ:</span> علامات الفرح أو البِشارة الظاهرة على الوجه أو الموقف؛ ويُلاحَظ أن اقتران "البشر" بـ"اليأس" في البيت نفسه يخلق تركيباً دلالياً متوتراً يصعب حسمه بيقين تام، والمصادر المتاحة لا تحسم القراءة التأويلية الدقيقة لهذا البيت، فيُصرَّح بهذا الغموض بدل حسمه تعسفاً.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">كأنه:</span> "كأنّ" حرف تشبيه ونصب، والهاء ضمير متصل في محل نصب اسمها.</div>
+      <div class="irab-item"><span class="irab-term">بعدَ:</span> ظرف زمان منصوب متعلق بالفعل "تلمع" الآتي.</div>
+      <div class="irab-item"><span class="irab-term">صدقِ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">القومِ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">أنفسهم:</span> توكيد معنوي لـ"القوم" مجرور، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">باليأسِ:</span> جار ومجرور متعلقان بالفعل "تلمع".</div>
+      <div class="irab-item"><span class="irab-term">تلمعُ:</span> فعل مضارع مرفوع، والجملة في محل رفع خبر "كأنّ".</div>
+      <div class="irab-item"><span class="irab-term">من قدامهِ:</span> جار ومجرور متعلقان بالفعل "تلمع"، والهاء مضاف إليه.</div>
+      <div class="irab-item"><span class="irab-term">البشرُ:</span> فاعل "تلمع" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التوتر الدلالي بين "اليأس" و"البشر" في تركيب واحد:</span> جمع الشاعر بين لفظين متضادي الدلالة (اليأس السلبي، والبِشر الإيجابي) في تركيب واحد يخلق حالة نفسية مركّبة يصعب حسم اتجاهها بيقين، وهذا قد يكون تصويراً متعمداً لحالة نفسية مضطربة تسبق الكارثة: بريق أمل يتخلله يأس كامن، وهو تفسير تأويلي محتمل لا قطعي.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">إشكالية تأويل حقيقية في متن القصيدة:</span> هذا البيت من أشد أبيات القصيدة غموضاً وتعقيداً تركيبياً، إذ يصعب الجزم بالعلاقة الدقيقة بين "اليأس" و"البشر" وبمن يعود عليه الضمير في "كأنه". يُقدَّم هذا التحليل باعتباره قراءة تأويلية محتملة، لا حسماً قطعياً، التزاماً بمبدأ عدم افتراض اليقين حيث يغيب الدليل النصي الحاسم.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يعمل هذا البيت الغامض كتمهيد نفسي مشحون قبل الكشف المباشر عن الخيانة في البيت الرابع والعشرين، فتوتره التركيبي والدلالي يهيئ القارئ لصدمة قادمة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق التقارب الصوتي بين "اليأسِ" و"البشرُ" دون تجانس حرفي مباشر توتراً إيقاعياً مضمراً يوافق التوتر الدلالي في المعنى نفسه.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v24">
+  <div class="verse-header" onclick="toggleVerse('v24')">
+    <span class="verse-number">٢٤</span>
+    <span class="verse-text">لو لم تخنهُ نفيلٌ، وهي خائنةٌ <span class="hemistich-separator">●</span> لصبحَ القومَ وردٌ ما له صدرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>البيت المحوري في القصيدة: لو لم تخنه قبيلة نفيل (وهي معروفة بالخيانة أصلاً)، لباغت القومَ صباحاً هجومٌ عنيف حاسم (وردٌ) لا رادّ له ولا مصدر يقف في وجهه، أي أن الخيانة وحدها هي ما حال دون انتصاره الحاسم.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">تخنهُ:</span> فعل من "الخيانة"، وهو التصريح الوحيد الصريح في القصيدة بسبب مقتله المباشر.</div>
+      <div class="vocab-item"><span class="vocab-term">نفيلٌ:</span> إشارة إلى بني نفيل بن عمرو بن كلاب، القبيلة التي تُنسب إليها حادثة قتل المنتشر بحسب مقدمة النص الأصلي.</div>
+      <div class="vocab-item"><span class="vocab-term">وردٌ:</span> هجوم مباغت حاد، من "الورود" بمعنى الوصول المفاجئ القوي.</div>
+      <div class="vocab-item"><span class="vocab-term">ما له صدرُ:</span> لا رادّ له ولا من يقف في وجهه، كناية عن قوة الهجوم القاهرة التي لا تُقاوَم.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">لو:</span> حرف شرط غير جازم يفيد الامتناع لامتناع.</div>
+      <div class="irab-item"><span class="irab-term">لم تخنهُ:</span> "لم" حرف جزم ونفي وقلب، "تخنهُ" فعل مضارع مجزوم بحذف حرف العلة، والهاء مفعول به.</div>
+      <div class="irab-item"><span class="irab-term">نفيلٌ:</span> فاعل "تخن" مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">وهي:</span> الواو حالية، "هي" ضمير منفصل مبني في محل رفع مبتدأ.</div>
+      <div class="irab-item"><span class="irab-term">خائنةٌ:</span> خبر مرفوع، والجملة الاسمية في محل نصب حال.</div>
+      <div class="irab-item"><span class="irab-term">لصبحَ:</span> اللام واقعة في جواب "لو"، "صبحَ" فعل ماضٍ مبني على الفتح.</div>
+      <div class="irab-item"><span class="irab-term">القومَ:</span> مفعول به منصوب.</div>
+      <div class="irab-item"><span class="irab-term">وردٌ:</span> فاعل "صبح" مرفوع وعلامة رفعه الضمة (مؤخر).</div>
+      <div class="irab-item"><span class="irab-term">ما له:</span> "ما" نافية، جار ومجرور متعلقان بخبر محذوف مقدم.</div>
+      <div class="irab-item"><span class="irab-term">صدرُ:</span> مبتدأ مؤخر مرفوع، والجملة في محل رفع نعت لـ"وردٌ".</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">أسلوب الشرط الامتناعي كإعادة كتابة للتاريخ:</span> استخدام "لو" الامتناعية يتيح للشاعر أن يتخيّل مساراً بديلاً للأحداث (النصر الحاسم) لولا الخيانة، وهذا أسلوب حجاجي يُحمّل الخيانة وحدها مسؤولية النتيجة المأساوية، معفياً الممدوح من أي تقصير.</div>
+      <div class="balagha-item"><span class="balagha-term">الاعتراض التوكيدي "وهي خائنةٌ":</span> الجملة الحالية المعترضة بين فعل الشرط وجوابه تحمل وظيفة تعليقية قوية: كأن الشاعر يوقف السرد لحظة ليؤكد للمتلقي أن الخيانة صفة معهودة أصيلة في نفيل، لا حادثة عارضة، فيرسّخ بذلك إدانته لها.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">الذروة السردية والتوثيقية للقصيدة:</span> هذا البيت هو الوحيد في القصيدة الذي يسمّي الجهة المسؤولة صراحة عن الحادثة ("نفيلٌ")، فيحوّل القصيدة من مرثية عامة إلى وثيقة تاريخية-قبلية تسجّل اتهاماً محدداً؛ وهو ما يعطي هذا البيت قيمة توثيقية تتجاوز البعد الجمالي المحض، ويتوافق مع ما ورد في مقدمة النص الأصلي من أن بني نفيل هم من قتلوا المنتشر.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>هذا البيت هو الذروة الدرامية للقصيدة كلها: الكشف الصريح عن سبب المأساة (الخيانة)، بعد أن مهّدت له الأبيات الغامضة والمتوترة السابقة (خصوصاً البيت الثالث والعشرين)؛ وهو يربط مباشرة بالبيت الثاني ("كنتُ أحذره لو ينفعُ الحذرُ")، فيتضح الآن أن مصدر الخطر الذي كان يُحذَر منه لم يكن قوة العدو المباشرة بل الخيانة من الداخل.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق تكرار جذر (خ-و-ن) في "تخنهُ" و"خائنةٌ" (جناس اشتقاق) تثبيتاً صوتياً على الفكرة المركزية للبيت، وكأن الإيقاع نفسه يُصرّ على تسمية الجرم مرتين.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- الحركة الخامسة -->
+<!-- ============================================================ -->
+<div class="movement-header">
+  <div class="badge">الحركة الخامسة (الأبيات ٢٥ – ٢٨): التعزية، التسليم بالقدر، والدعاء الختامي</div>
+  <p>تختتم القصيدة بنبرة أهدأ: مخاطبة مباشرة للفقيد، تسليم بمصيبة الفقد مع إعلان الصبر الجماعي، ودعاء ختامي يُنهي القصيدة بتلخيص أخلاقي لشخصية المرثيّ.</p>
+</div>
+
+<div class="verse-card" id="v25">
+  <div class="verse-header" onclick="toggleVerse('v25')">
+    <span class="verse-number">٢٥</span>
+    <span class="verse-text">أصبتَ في حرمٍ منا أخا ثقةٍ <span class="hemistich-separator">●</span> هندُ بن أسماَء لا يهنئ لك الظفرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>خطاب مباشر موجَّه إلى القاتل (يبدو أنه من بني نفيل، ويُدعى هند بن أسماء بحسب هذا البيت): لقد أصبتَ رجلاً موثوقاً من حرمنا وذوينا، فلا يهنأ لك ظفرك بهذا القتل، وهي عبارة تهديد أو تعيير بأن النصر الذي حققه القاتل لن يكون نصراً حقيقياً أو مباركاً.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">أصبتَ:</span> فعل خطاب مباشر (أنتَ) موجَّه إلى القاتل، وهو تحول مفاجئ في المخاطَب من الغائب إلى الحاضر.</div>
+      <div class="vocab-item"><span class="vocab-term">حرمٍ:</span> ما يُحمى ويُصان، أي من صميم قومنا وذوي حرمتنا.</div>
+      <div class="vocab-item"><span class="vocab-term">أخا ثقةٍ:</span> رجلاً موثوقاً معتمَداً عليه.</div>
+      <div class="vocab-item"><span class="vocab-term">هندُ بن أسماَء:</span> اسم عَلَم يبدو أنه اسم القاتل المخاطَب في هذا البيت، والمصادر المتاحة لا تقدم تفاصيل إضافية موثقة عن هويته خارج هذا البيت، فيُصرَّح بغياب التوثيق الإضافي.</div>
+      <div class="vocab-item"><span class="vocab-term">لا يهنئ لك الظفرُ:</span> دعاء أو تعيير بألا يكون النصر هنيئاً للقاتل.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">أصبتَ:</span> فعل ماضٍ مبني على السكون، والتاء فاعل في محل رفع.</div>
+      <div class="irab-item"><span class="irab-term">في حرمٍ:</span> جار ومجرور متعلقان بمحذوف حال من "أخا ثقةٍ".</div>
+      <div class="irab-item"><span class="irab-term">منا:</span> جار ومجرور متعلقان بمحذوف نعت لـ"حرمٍ".</div>
+      <div class="irab-item"><span class="irab-term">أخا:</span> مفعول به منصوب بالألف لأنه من الأسماء الخمسة (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">ثقةٍ:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">هندُ:</span> منادى مبني على الضم في محل نصب (على حذف حرف النداء)، أو خبر لمبتدأ محذوف على الاستئناف التفسيري.</div>
+      <div class="irab-item"><span class="irab-term">بن:</span> نعت لـ"هندُ" أو بدل، منصوب أو مرفوع تبعاً لإعراب "هند".</div>
+      <div class="irab-item"><span class="irab-term">أسماَء:</span> مضاف إليه مجرور بالفتحة نيابة عن الكسرة (ممنوع من الصرف للعلمية والتأنيث).</div>
+      <div class="irab-item"><span class="irab-term">لا يهنئ:</span> "لا" نافية أو دعائية، "يهنئ" فعل مضارع مرفوع أو مجزوم بـ"لا" الطلبية.</div>
+      <div class="irab-item"><span class="irab-term">لك:</span> جار ومجرور متعلقان بالفعل "يهنئ".</div>
+      <div class="irab-item"><span class="irab-term">الظفرُ:</span> فاعل "يهنئ" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الالتفات من الغياب إلى الخطاب المباشر:</span> ينتقل الشاعر فجأة من الحديث عن الفقيد بصيغة الغائب (طوال الأبيات السابقة) إلى مخاطبة القاتل مباشرة بصيغة المخاطَب ("أصبتَ")، وهو أسلوب الالتفات البلاغي الذي يمنح البيت حدّة انفعالية مفاجئة، وكأن الشاعر يواجه القاتل وجهاً لوجه في لحظة الغضب.</div>
+      <div class="balagha-item"><span class="balagha-term">أسلوب الدعاء بعدم الهناء كإدانة أخلاقية لا مجرد حزن:</span> بدل الاكتفاء بالحزن، يحوّل الشاعر خطابه إلى إدانة أخلاقية-دعائية للقاتل (لا يهنأ له الظفر)، فيضفي على الرثاء بُعداً حِجاجياً يطلب فيه العدالة الرمزية إن تعذّرت الفعلية.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يفتتح هذا البيت الحركة الختامية بلحظة مواجهة مباشرة وحادّة، قبل أن تتحول نبرة القصيدة تدريجياً نحو التسليم والتعزية في الأبيات التالية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يكسر التحول المفاجئ إلى صيغة الخطاب المباشر ("أصبتَ") رتابة الإيقاع السردي السابق، محدثاً وقعاً صوتياً أكثر حدة وانفعالاً يوافق لحظة المواجهة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v26">
+  <div class="verse-header" onclick="toggleVerse('v26')">
+    <span class="verse-number">٢٦</span>
+    <span class="verse-text">ورادُ حرب شهابٌ يستضاءُ به <span class="hemistich-separator">●</span> كما أضاَء سوادَ الطخية القمرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>عودة إلى وصف الفقيد: هو وارد الحروب (المقدام فيها)، شهابٌ يُستضاء به (مصدر هداية ونور في المعارك)، كما يضيء القمر ظلام الطخية (السحابة المظلمة الكثيفة)، تكرار لصورة الضياء التي سبقت في البيت الثامن عشر.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">ورادُ حرب:</span> من يرِد الحروب ويُقدم عليها بشجاعة، صيغة مبالغة من "الورود".</div>
+      <div class="vocab-item"><span class="vocab-term">شهابٌ:</span> شعلة نار مضيئة أو نجم ثاقب، رمز الضياء والهداية في المعارك.</div>
+      <div class="vocab-item"><span class="vocab-term">الطخية:</span> الظلمة الكثيفة أو السحابة المظلمة الشديدة السواد.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">ورادُ:</span> خبر لمبتدأ محذوف تقديره "هو"، مرفوع (وهو مضاف).</div>
+      <div class="irab-item"><span class="irab-term">حرب:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">شهابٌ:</span> خبر ثانٍ مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">يستضاءُ:</span> فعل مضارع مبني للمجهول مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">به:</span> جار ومجرور متعلقان بالفعل "يستضاء"، ونائب الفاعل ضمير مستتر يعود على "شهاب"، والجملة نعت لـ"شهابٌ".</div>
+      <div class="irab-item"><span class="irab-term">كما:</span> الكاف حرف تشبيه وجر، "ما" مصدرية.</div>
+      <div class="irab-item"><span class="irab-term">أضاَء:</span> فعل ماضٍ مبني على الفتح، والمصدر المؤول من "ما أضاء" في محل جر بالكاف متعلق بمحذوف نعت ثانٍ أو حال.</div>
+      <div class="irab-item"><span class="irab-term">سوادَ:</span> مفعول به منصوب.</div>
+      <div class="irab-item"><span class="irab-term">الطخية:</span> مضاف إليه مجرور.</div>
+      <div class="irab-item"><span class="irab-term">القمرُ:</span> فاعل "أضاء" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">استئناف الصورة الضوئية من الحركة الثالثة (رجع الصدى الفني):</span> يستعيد هذا البيت الصورة نفسها التي وردت في البيت الثامن عشر (تشبيهه بالكوكب الدري)، بتشبيه جديد (الشهاب، القمر الذي يضيء السواد)، فيخلق هذا التكرار البنيوي نسيجاً صورياً موحداً يربط بين مقاطع القصيدة المتباعدة عبر معجم الضياء والظلام.</div>
+      <div class="balagha-item"><span class="balagha-term">التشبيه المزدوج (شهاب + قمر يضيء الطخية):</span> يراكم الشاعر تشبيهين ضوئيين متتاليين لتوكيد الصفة نفسها من زاويتين (النار المتقدة، والنور الهادئ الدائم)، فيمنح الصورة عمقاً وتنوعاً بدل الاكتفاء بتشبيه واحد.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>بعد لحظة المواجهة الحادة مع القاتل في البيت السابق، يعود هذا البيت إلى نبرة المديح الهادئة، مكرراً صورة الضياء الأساسية في القصيدة، ومهيئاً للانتقال نحو نبرة التعزية والتسليم في الأبيات الختامية.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق الطباق بين "شهابٌ يستضاءُ به" و"سوادَ الطخية" (الضياء مقابل الظلام) توتراً بصرياً-صوتياً يعزز جمالية الصورة، كما يعيد صدى صوتي لحرف الضاد (أضاء) نغمة الإشراق الموصوفة.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v27">
+  <div class="verse-header" onclick="toggleVerse('v27')">
+    <span class="verse-number">٢٧</span>
+    <span class="verse-text">إمَّا يصبكَ عدوٌّ في مناوَأة <span class="hemistich-separator">●</span> يوماً فقد كنتَ تستعلي وتنتصرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>خطاب موجَّه للفقيد نفسه (عودة إلى مخاطبته مباشرة): إن أصابك يوماً عدوٌّ في مواجهة (مناوأة)، فقد كنتَ في العادة تعلو عليه وتنتصر، أي أن هزيمته الأخيرة كانت استثناءً من عادته المعهودة في الانتصار الدائم.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">يصبكَ:</span> يصيبك، فعل مضارع مجزوم بحذف حرف العلة.</div>
+      <div class="vocab-item"><span class="vocab-term">مناوَأة:</span> مواجهة أو مخاصمة، من "ناوأ" بمعنى عادى وقاوم.</div>
+      <div class="vocab-item"><span class="vocab-term">تستعلي:</span> تعلو وتتفوق على خصمك.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">إمَّا:</span> "إنْ" الشرطية أُدغمت بـ"ما" الزائدة للتوكيد، حرف شرط جازم.</div>
+      <div class="irab-item"><span class="irab-term">يصبكَ:</span> فعل مضارع مجزوم بحذف حرف العلة في محل جزم فعل الشرط، والكاف مفعول به.</div>
+      <div class="irab-item"><span class="irab-term">عدوٌّ:</span> فاعل "يصب" مرفوع وعلامة رفعه الضمة.</div>
+      <div class="irab-item"><span class="irab-term">في مناوَأة:</span> جار ومجرور متعلقان بمحذوف حال من "عدوٌّ".</div>
+      <div class="irab-item"><span class="irab-term">يوماً:</span> ظرف زمان منصوب متعلق بالفعل "يصب".</div>
+      <div class="irab-item"><span class="irab-term">فقد:</span> الفاء رابطة لجواب الشرط، "قد" حرف تحقيق.</div>
+      <div class="irab-item"><span class="irab-term">كنتَ:</span> فعل ماضٍ ناقص، والتاء اسمه في محل رفع.</div>
+      <div class="irab-item"><span class="irab-term">تستعلي:</span> فعل مضارع مرفوع في محل نصب خبر "كان"، فاعله مستتر.</div>
+      <div class="irab-item"><span class="irab-term">وتنتصرُ:</span> الواو عاطفة، معطوفة على "تستعلي" بنفس الحكم الإعرابي.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">الفعل المضارع الماضي الدلالة "كنتَ تستعلي":</span> استخدام "كان" الناقصة مع المضارع يفيد الاستمرارية في الماضي (كان ديدنه الانتصار الدائم)، وهذا التركيب النحوي يخدم دلالياً فكرة أن هزيمته الأخيرة استثناء يكسر قاعدة راسخة، لا نتيجة ضعف متكرر.</div>
+      <div class="balagha-item"><span class="balagha-term">أسلوب الشرط كصيغة تعزية ضمنية:</span> يوظف الشاعر أسلوب الشرط ("إمّا يصبك") ليصوغ تعزية غير مباشرة: حتى الأبطال يصيبهم العدوّ أحياناً، لكن سجله الحافل بالانتصار يبقى الحكم الأشمل على شخصيته، لا هذه الحادثة المفردة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يبدأ هذا البيت الانعطاف النهائي نحو التسليم والتعزية، إذ يعيد تأطير الهزيمة الأخيرة باعتبارها استثناءً عابراً في سجل حافل بالانتصار، ممهداً للأبيات الختامية التي ستعلن الصبر الجماعي صراحة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق توالي الفعلين المتقاربين صوتياً "تستعلي وتنتصرُ" (تشابه الوزن الصرفي) إيقاعاً متصاعداً يوحي بتكرار الانتصار واستمراريته عبر الزمن الماضي.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="verse-card" id="v28">
+  <div class="verse-header" onclick="toggleVerse('v28')">
+    <span class="verse-number">٢٨</span>
+    <span class="verse-text">فإنْ جزعنا فقد هدت مصيبتنا <span class="hemistich-separator">●</span> وإنْ صبرنا فإنَّا معشرٌ صبرُ</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="verse-body">
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📖</span> المعنى العام</div>
+      <p>إن جزعنا (لم نتحمل الحزن) فقد هدّتنا المصيبة حقاً (فهذا الجزع مبرَّر لعظم الفقد)، وإن صبرنا فإننا معشر أهل صبر معروفون بذلك، أي أن الصبر أو الجزع كليهما مبرَّر ومقبول في هذا المقام، وهي خاتمة تجمع بين الاعتراف بحجم الألم والتأكيد على قيمة الصبر.</p>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">📝</span> المفردات</div>
+      <div class="vocab-item"><span class="vocab-term">جزعنا:</span> ضعف تحملنا وحزننا حزناً شديداً بلا احتمال.</div>
+      <div class="vocab-item"><span class="vocab-term">هدّت:</span> هدمت وأضعفت بشدة.</div>
+      <div class="vocab-item"><span class="vocab-term">معشرٌ صبرُ:</span> جماعة معروفون بالصبر، "صبرُ" جمع "صبور" وصف لهم.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">⚙️</span> الإعراب</div>
+      <div class="irab-item"><span class="irab-term">فإنْ:</span> الفاء استئنافية، "إنْ" حرف شرط جازم.</div>
+      <div class="irab-item"><span class="irab-term">جزعنا:</span> فعل ماضٍ مبني على السكون في محل جزم فعل الشرط، ونا فاعل.</div>
+      <div class="irab-item"><span class="irab-term">فقد:</span> الفاء رابطة لجواب الشرط، "قد" حرف تحقيق.</div>
+      <div class="irab-item"><span class="irab-term">هدت:</span> فعل ماضٍ مبني على الفتح، والتاء للتأنيث.</div>
+      <div class="irab-item"><span class="irab-term">مصيبتنا:</span> فاعل "هدّت" مرفوع، ونا مضاف إليه، والجملة في محل جزم جواب الشرط.</div>
+      <div class="irab-item"><span class="irab-term">وإنْ صبرنا:</span> الواو عاطفة، معطوفة على الجملة الشرطية الأولى بنفس التركيب.</div>
+      <div class="irab-item"><span class="irab-term">فإنَّا:</span> الفاء رابطة لجواب الشرط، "إنّ" حرف توكيد ونصب، ونا ضمير متصل في محل نصب اسمها.</div>
+      <div class="irab-item"><span class="irab-term">معشرٌ:</span> خبر "إنّ" مرفوع.</div>
+      <div class="irab-item"><span class="irab-term">صبرُ:</span> نعت لـ"معشرٌ" مرفوع وعلامة رفعه الضمة.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">✨</span> البلاغة</div>
+      <div class="balagha-item"><span class="balagha-term">التوازي التركيبي الكامل بين الشطرين (إن... فقد/وإن... فإنّا):</span> بناء الشطرين على هيكل شرطي متماثل يخلق توازناً بلاغياً محكماً يعكس الحياد الوجداني الذي يطرحه الشاعر: كلا الاحتمالين (الجزع والصبر) مشروع وموصوف بحكمه الخاص، دون تفضيل قاطع لأحدهما على الآخر في الصياغة الشكلية، وإن كانت الخاتمة تميل ضمناً نحو تفعيل قيمة الصبر باعتباره الصفة القَبَلية المعتادة.</div>
+      <div class="balagha-item"><span class="balagha-term">الفخر الجماعي الخفي في "معشرٌ صبرُ":</span> يتحول البيت في ختامه من التعبير الفردي عن الحزن إلى تعريف جماعي بالهوية القبلية (نحن معشر صبر)، فيُدرج مصيبة الفقد الفردية ضمن منظومة قيم القبيلة الأشمل، وهي خاتمة تربط الخاص بالعام.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎓</span> ملاحظة نقدية أكاديمية</div>
+      <div class="scholarly-item"><span class="scholarly-term">وظيفة الخاتمة: التسليم لا الحل:</span> لا ينتهي البيت الأخير بحل درامي أو انتقام متحقق، بل بموقف نفسي-قيمي (احتمال الجزع أو الصبر كلاهما مشروع)، وهذا نمط ختامي شائع في مراثي الجاهلية يفضّل التسليم بالقدر على السرد الحدثي المكتمل، فيترك القصيدة منفتحة على الحزن الإنساني المشروع دون افتعال حل زائف.</div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🔗</span> الدلالة والسياق</div>
+      <div class="context-box">
+        <p>يختم هذا البيت القصيدة بصيغة حكمية-جماعية، فينقل الخطاب من "أنا" الفردي (السائد في مطلع القصيدة: أتتني، بتُّ، أحذره) إلى "نحن" الجماعي (جزعنا، صبرنا، معشرٌ)، وهو انتقال دلالي يوسّع أفق الرثاء من التجربة الشخصية إلى التجربة القَبَلية المشتركة، مناسباً تماماً لموقع البيت في ختام القصيدة.</p>
+      </div>
+    </div>
+
+    <div class="analysis-section">
+      <div class="section-title"><span class="icon">🎵</span> الموسيقى</div>
+      <div class="music-box">
+        <p>يخلق التوازي الصوتي الكامل بين الشطرين ("فإن جزعنا فقد هدت... وإن صبرنا فإنا") إيقاعاً متزناً هادئاً يناسب لحظة الختام والتسليم، بعد التوتر الدرامي المتصاعد في الأبيات السابقة؛ ويُلاحظ أن هذا البيت هو خاتمة القصيدة، وهو ما يُبقي القافية الأخيرة (صبرُ) صدى ختامياً يستقر عند قيمة الصبر بوصفها الكلمة الأخيرة في النص.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- ✦ الملحق التحليلي المكمّل ✦ -->
+<!-- ============================================================ -->
+<main class="container">
+
+  <div class="appendix-divider"><span>✦ الملحق التحليلي المكمّل ✦</span></div>
+
+  <div class="appendix-intro">
+    <h2>المستويات المنهجية المكمّلة للتحليل</h2>
+    <p>
+      يستكمل هذا القسم تسعة مستويات منهجية للتحليل: فرضية القراءة والإشكالية البحثية، المستوى الصوتي-الصرفي الدقيق، الحقول الدلالية، البناء التركيبي-النحوي، تفصيل حرف الروي والتصريع، اللسانيات النصية والتداولية، التناص المصنَّف ومفهوم القناع الفني، البنية النفسية، وأفق بحثي مستقبلي.
+    </p>
+  </div>
+
+  <div class="nav-map">
+    <a href="#m1"><span class="num">١</span> فرضية القراءة والإشكالية البحثية</a>
+    <a href="#m2"><span class="num">٢</span> المستوى الصوتي والصرفي الدقيق</a>
+    <a href="#m3"><span class="num">٣</span> الحقول الدلالية</a>
+    <a href="#m4"><span class="num">٤</span> البناء التركيبي والأساليب</a>
+    <a href="#m5"><span class="num">٥</span> حرف الروي والتصريع</a>
+    <a href="#m6"><span class="num">٦</span> اللسانيات النصية والتداولية</a>
+    <a href="#m7"><span class="num">٧</span> التناص والقناع الفني</a>
+    <a href="#m8"><span class="num">٨</span> البنية النفسية</a>
+    <a href="#m9"><span class="num">٩</span> آفاق بحثية مستقبلية</a>
+  </div>
+
+  <!-- ========== MODULE 1 ========== -->
+  <div id="m1" class="module">
+    <div class="module-eyebrow"><span class="n">١</span> المرحلة الأولى — عتبات النص</div>
+    <h2>فرضية القراءة، الإشكالية البحثية، وسيميائية المطلع</h2>
+    <div class="module-sub">تُصاغ قبل الدخول في أي مستوى داخلي من مستويات النص<span class="rule-badge">Rule 5</span></div>
+    <h3>سيميائية المطلع بوصفه عتبة أولى</h3>
+    <p>يفتتح الشاعر قصيدته بجملة توكيدية ("إنّي أتتني لسانٌ لا أسرُّ بها") تضع المتلقي فوراً في لحظة تلقّي خبر مؤلم، دون أي تمهيد وصفي أو مدخل تقليدي (كالوقوف على الأطلال المعتاد في مطالع القصائد الجاهلية). هذا الاختيار يهيئ أفق توقع مباشر وحاد: القارئ يعلم منذ الكلمة الأولى أن القصيدة رثاء، لا غزل ولا فخر مستقل، وأن نبرتها ستكون جادة صرفة (نفي العجب والسخر) منذ السطر الأول.</p>
+    <h3>فرضية القراءة</h3>
+    <div class="method-note">
+      <strong>الفرضية المصاغة قبل الشروع في التحليل التفصيلي:</strong> تفترض هذه القراءة أن القصيدة تبني صورة "الفتى الكامل" (الجامع بين الكرم، الشجاعة، القناعة، والجَلَد) لتكون معياراً تُقاس به فداحة الخسارة، ثم تُحمّل مسؤولية سقوط هذا الكمال لعامل خارجي واحد محدد (الخيانة)، لا لضعف ذاتي في الممدوح؛ وبذلك تتحول القصيدة من رثاء عاطفي عام إلى بناء حجاجي يبرّئ الفقيد من أي تقصير ويُلقي بكل ثقل المأساة على الغادرين.
+    </div>
+    <h3>الإشكالية البحثية المركزية</h3>
+    <p>كيف توازن القصيدة بين نمط "تعداد المناقب" الثابت (الذي قد يبدو تعميمياً مجرداً في المراثي الجاهلية عموماً) وبين خصوصية الحادثة التاريخية (خيانة نفيل) التي تمنح النص طابعاً وثائقياً-اتهامياً فريداً؟ بعبارة أخرى: هل القصيدة رثاء نمطي بمناقب عامة، أم وثيقة قبلية محددة السياق تستخدم قالب الرثاء التقليدي لغرض توثيقي-اتهامي دقيق؟</p>
+    <h3>مؤشرات أولية من المطلع والخاتمة</h3>
+    <p>يبدأ المطلع بضمير المتكلم المفرد ("إنّي... أسرّ... أندبه") معبّراً عن تجربة فردية خاصة بالشاعر وحده، بينما تختتم القصيدة بضمير الجماعة ("جزعنا... صبرنا... معشرٌ صبرُ")؛ هذا الانتقال من "أنا" إلى "نحن" يسند الفرضية القائلة بأن القصيدة تتحرك من الخاص إلى العام، محوّلة تجربة الفقد الفردية إلى موقف قبلي جماعي مشترك تجاه المصيبة والخيانة معاً.</p>
+  </div>
+
+  <!-- ========== MODULE 2 ========== -->
+  <div id="m2" class="module">
+    <div class="module-eyebrow"><span class="n">٢</span> المرحلة الثالثة — التحليل المستوياتي اللغوي</div>
+    <h2>المستوى الصوتي والصرفي بدقته الاصطلاحية</h2>
+    <div class="module-sub">التمييز بين الفونيم والمورفيم، وتتبع العدول الصرفي (فعلي ↔ اسمي)<span class="rule-badge">Rule 6، 7</span></div>
+    <h3>أ) المستوى الصوتي: الفونيمات المهيمنة</h3>
+    <div class="item-box box-teal">
+      <span class="item-term">الراء [r] — فونيم لثوي مكرر (تكراري/رخو)</span>
+      يتكرر بكثافة استثنائية بحكم كونه حرف الروي نفسه (نهاية كل بيت)، إضافة إلى تواتره داخل الأشطر (سخرُ، حذرُ، معتمرُ، مضرُ، الغيرُ، المطرُ، الوبرُ، جزرُ...). هذا التكرار المزدوج (داخلياً وقافوياً) يمنح القصيدة جرساً متصلاً حاداً يوافق طابعها الجاد الحاسم، ويُحسّ معه القارئ وكأن كل بيت "يُقرَع" بنفس الصوت الختامي القوي.
+    </div>
+    <div class="item-box box-teal">
+      <span class="item-term">الشين والسين [ʃ]/[s] — صوتان احتكاكيان مهموسان</span>
+      يتكرران في مواضع الوصف الحسي الهادئ (مهفهفٌ، شعثاً، تكفيه، شربه، الشواء)، فيضفيان على مقاطع الوصف الجسدي والقناعة طابعاً همسياً ناعماً يخالف حدة الراء المهيمنة، محدثين تنويعاً صوتياً بين الحدة والليونة يوازي تنويع المعاني الموصوفة.
+    </div>
+    <h3>ب) المستوى الصرفي: العدول الفعلي ↔ الاسمي</h3>
+    <p>تتوزع القصيدة بين جمل فعلية غالبة في المقاطع السردية (الحركة الأولى: أتتني، بتّ، جاشت، جاء) وجمل اسمية غالبة في مقاطع الوصف الثابت (بعض أبيات المديح: مهفهف، أهضم الكشحين، منخرقٌ)، بينما تعود الغلبة الفعلية بقوة في مقاطع الحركة والفعل القتالي (لا يغمز، لا يصعب، تلقاه).</p>
+    <table class="data-table">
+      <tr><th>القسم</th><th>الغالب الصرفي</th><th>الدلالة النسقية</th></tr>
+      <tr><td>لحظة النبأ <span class="vchip">١-٤</span></td><td>فعلية (أتتني، بتّ، جاشت، جاء، التقينا)</td><td>يوافق الطابع الحدثي-السردي للحظة تلقي الخبر ووصول الراكب</td></tr>
+      <tr><td>مديح الكرم <span class="vchip">٦-٩</span></td><td>فعلية غالبة مع أسماء موصولة (لا تغبّ، تكفيه، ليس)</td><td>يصف أفعالاً متكررة معتادة (الكرم كسلوك مستمر لا صفة جامدة)</td></tr>
+      <tr><td>الوصف الجسدي <span class="vchip">١٧</span></td><td>اسمية خالصة (مهفهفٌ، أهضمُ، منخرقٌ)</td><td>يوافق الوصف الثابت للهيئة الخارجية دون حدث أو حركة زمنية</td></tr>
+      <tr><td>لحظة الفقد والخيانة <span class="vchip">١٩، ٢٤</span></td><td>فعلية ماضوية حاسمة (فارقنا، لم تخنه)</td><td>يوافق الانتقال إلى الحدث المنجز التاريخي المحدد</td></tr>
+      <tr><td>الخاتمة <span class="vchip">٢٧-٢٨</span></td><td>فعلية شرطية (جزعنا، صبرنا)</td><td>يعكس الطابع الافتراضي-الحكمي للموقف الختامي (احتمالان مطروحان)</td></tr>
+    </table>
+    <h3>صيغ صرفية اشتقاقية لافتة</h3>
+    <div class="item-box box-gold">
+      <span class="item-term">صيغة اسم الفاعل الممتدة في الوصف (مهفهفٌ، أهضمُ، منخرقٌ، محتقر)</span>
+      تكديس صيغ اسم الفاعل واسم المفعول في بيت وصفي واحد (البيت ١٧) يخلق كثافة صرفية توازي كثافة الصفات الجسدية المتراكمة، وهي تقنية أسلوبية شائعة في المقاطع الوصفية الجاهلية لرسم صورة سريعة مكتملة الملامح.
+    </div>
+    <div class="item-box box-gold">
+      <span class="item-term">تكرار الجذر الواحد بصيغ مختلفة (يكدرهُ/كدرُ، تخنهُ/خائنةٌ، يعطيها/يسألها)</span>
+      يستثمر الشاعر الجناس الاشتقاقي في مواضع دلالية حاسمة (نفي الشائبة عن الخير في البيت التاسع، توكيد جرم الخيانة في البيت الرابع والعشرين)، فيوظف البنية الصرفية نفسها أداة توكيد دلالي متكرر.
+    </div>
+  </div>
+
+  <!-- ========== MODULE 3 ========== -->
+  <div id="m3" class="module">
+    <div class="module-eyebrow"><span class="n">٣</span> المرحلة الثالثة — المستوى المعجمي</div>
+    <h2>الحقول الدلالية: التصنيف الإحصائي للمعجم الشعري</h2>
+    <div class="module-sub">تصنيف كمّي للألفاظ المهيمنة ضمن حقول مترابطة<span class="rule-badge">Rule 8</span></div>
+    <p>يتوزع معجم القصيدة على خمسة حقول دلالية رئيسية متداخلة، يهيمن عليها حقلا "الكرم/الإطعام" و"الفروسية/الحرب" باعتبارهما عمودَي منظومة المروءة الجاهلية التي تبنيها القصيدة.</p>
+    <div class="freq-bar-row">
+      <div class="freq-bar-label">الكرم والإطعام</div>
+      <div class="freq-bar-track"><div class="freq-bar-fill" style="width:90%"></div></div>
+      <div class="freq-bar-count">9</div>
+    </div>
+    <div class="freq-bar-row">
+      <div class="freq-bar-label">الحرب والفروسية</div>
+      <div class="freq-bar-track"><div class="freq-bar-fill" style="width:80%"></div></div>
+      <div class="freq-bar-count">8</div>
+    </div>
+    <div class="freq-bar-row">
+      <div class="freq-bar-label">الضوء والظلام</div>
+      <div class="freq-bar-track"><div class="freq-bar-fill" style="width:40%"></div></div>
+      <div class="freq-bar-count">4</div>
+    </div>
+    <div class="freq-bar-row">
+      <div class="freq-bar-label">السفر والإبل</div>
+      <div class="freq-bar-track"><div class="freq-bar-fill" style="width:50%"></div></div>
+      <div class="freq-bar-count">5</div>
+    </div>
+    <div class="freq-bar-row">
+      <div class="freq-bar-label">الخيانة والغدر</div>
+      <div class="freq-bar-track"><div class="freq-bar-fill" style="width:20%"></div></div>
+      <div class="freq-bar-count">2</div>
+    </div>
+    <h3>الكرم والإطعام</h3>
+    <p>يتشكل هذا الحقل من: جفنته، الشول، أول زاد القوم، المطيّ، جزر، حزة فلذ، الشواء، شربه الغمر، خيره. يتوزع بكثافة في الحركة الثانية كاملة (الأبيات ٦-١٤)، ووظيفته الأساسية إثبات الصفة الأولى والأهم في منظومة المروءة الجاهلية: الجود حتى في أشد الظروف قسوة.</p>
+    <h3>الحرب والفروسية</h3>
+    <p>يتشكل من: أخو حروبٍ، المشرفيّ، ضربتهُ، منصلتاً، يغزُ، الظفرُ، عدوٌّ، مناوَأة، تستعلي وتنتصرُ. يتوزع بين الحركتين الثانية والرابعة، ووظيفته إثبات الشجاعة والهيبة القتالية المكمّلة لصفة الكرم، وصولاً إلى ذروته في مشهد الخيانة الذي يفسّر لماذا لم تُجدِ هذه الشجاعة نفعاً.</p>
+    <h3>الضوء والظلام</h3>
+    <p>يتشكل من: الكوكب الدريّ، لا نجمٌ ولا قمر، شهابٌ يستضاءُ به، أضاَء، سوادَ الطخية. يتركز في البيتين ١٨ و٢٦، ويؤدي وظيفة رمزية مزدوجة: تصوير هداية الممدوح ومكانته المحورية بين قومه، مع تمهيد ضمني لصورة "الإطفاء" التي يمثلها الموت (خفوت النور).</p>
+    <h3>السفر والإبل</h3>
+    <p>يتشكل من: الشولُ، مغبراً مناكبها، البازلُ الكوماءُ، تكظمُ، الجررُ، راكبٌ. يتركز في الحركة الثانية، ووظيفته تجسيد صفة كثرة الترحال والسعي التي تلازم شخصية الفارس الجاهلي، وربطها بصورة الإبل بوصفها معادلاً موضوعياً لحال صاحبها.</p>
+    <h3>الخيانة والغدر</h3>
+    <p>يتشكل من: تخنهُ، خائنةٌ. رغم قلة تكراره الكمي، فإن هذا الحقل يحمل الثقل الدلالي الأكبر في القصيدة، إذ يمثل نقطة التفسير الحاسمة لمجمل الأحداث، وموقعه في البيت المحوري (٢٤) يمنحه ثقلاً يفوق حجمه العددي بكثير.</p>
+    <div class="method-note">
+      <strong>خلاصة العلاقة بين الحقول:</strong> تتكامل الحقول الأربعة الأولى (الكرم، الحرب، الضوء، السفر) في بناء صورة الفتى الكامل تراكمياً، بينما يقف حقل الخيانة في تعارض حاد ومفاجئ مع هذا البناء التراكمي كله، محدثاً انكساراً دلالياً مفاجئاً يوازي انكسار "الرمح ذي النصلين" في البيت التاسع عشر؛ فالبنية المعجمية للقصيدة تُحاكي بنيتها السردية: تراكم طويل للكمال، ثم كسر واحد حاسم يفسّر غيابه.
+    </div>
+  </div>
+
+  <!-- ========== MODULE 4 ========== -->
+  <div id="m4" class="module">
+    <div class="module-eyebrow"><span class="n">٤</span> المرحلة الثالثة — التحليل التركيبي-النحوي</div>
+    <h2>البناء التركيبي: الجملة الاسمية/الفعلية والأساليب الخبرية/الإنشائية</h2>
+    <div class="module-sub">قراءة نظمية لدلالة اختيار نوع الجملة<span class="rule-badge">Rule 14</span></div>
+    <h3>الجملة الاسمية مقابل الفعلية: مسار عبر القصيدة</h3>
+    <div class="scan-list">
+      <div class="scan-row"><span class="vnum">١-٥</span><span class="vtext"><b>غلبة فعلية سردية</b> تصف تتابع أحداث وصول النبأ والراكب زمنياً</span></div>
+      <div class="scan-row"><span class="vnum">٦-١٦</span><span class="vtext"><b>مزيج فعلي-اسمي متوازن</b> يصف أفعالاً معتادة متكررة (كرم، قناعة) عبر صيغ الفعل المضارع المستمر، مع مقاطع اسمية للصفات الثابتة</span></div>
+      <div class="scan-row"><span class="vnum">١٧-١٨</span><span class="vtext"><b>غلبة اسمية وصفية</b> ترسم الهيئة الجسدية والحضور الرمزي بصيغ ثابتة خارج الزمن</span></div>
+      <div class="scan-row"><span class="vnum">١٩، ٢٤</span><span class="vtext"><b>فعل ماضٍ حاسم</b> (فارقنا، لم تخنه) يسجل الحدث المنجز التاريخي بلا رجعة</span></div>
+      <div class="scan-row"><span class="vnum">٢٥-٢٨</span><span class="vtext"><b>مزيج خطابي-شرطي</b> يجمع بين المخاطبة المباشرة (أصبتَ) والجمل الشرطية الحكمية (إن جزعنا... وإن صبرنا)</span></div>
+    </div>
+    <h3>الأساليب الخبرية والإنشائية ووظائفها الثانوية</h3>
+    <div class="item-box box-rust">
+      <span class="item-term">النداء الضمني/المخاطبة المباشرة في البيت ٢٥ ("أصبتَ في حرمٍ منا")</span>
+      يكسر هذا التحول من الخبر إلى المخاطبة المباشرة نسق السرد الغائب السائد في معظم القصيدة، محدثاً أثراً درامياً مفاجئاً يجسّد لحظة المواجهة الوجدانية مع القاتل، ووظيفته الثانوية توكيد حدّة الإدانة الأخلاقية للخيانة.
+    </div>
+    <div class="item-box box-rust">
+      <span class="item-term">أسلوب الشرط الامتناعي في البيت ٢٤ ("لو لم تخنهُ نفيلٌ")</span>
+      يخدم هذا الأسلوب الإنشائي وظيفة حجاجية مزدوجة: يعيد كتابة مسار محتمل بديل (النصر لولا الخيانة)، ويُحمّل بذلك المسؤولية الكاملة لطرف خارجي، مبرّئاً الممدوح ضمنياً من أي تقصير.
+    </div>
+    <div class="item-box box-rust">
+      <span class="item-term">الأسلوب الشرطي المزدوج في الخاتمة (إن جزعنا... وإن صبرنا)</span>
+      يوظَّف الشرط هنا لا للتشكيك بل لعرض احتمالين متكافئين في المشروعية، فيمنح البيت الختامي طابعاً حِكَمياً-فلسفياً يليق بموضع الخاتمة، ويحرّر المتلقي من إلزام عاطفي واحد.
+    </div>
+  </div>
+
+  <!-- ========== MODULE 5 ========== -->
+  <div id="m5" class="module">
+    <div class="module-eyebrow"><span class="n">٥</span> المرحلة الرابعة — الإيقاع الخارجي</div>
+    <h2>حرف الروي بصفاته الصوتية الدقيقة، والتصريع</h2>
+    <div class="module-sub">فحص الروي والتصريع بدقة اصطلاحية<span class="rule-badge">Rule 11، 18</span></div>
+    <h3>حرف الروي: راء مضمومة (رائية مطلقة)</h3>
+    <p>القافية في هذه القصيدة مطلقة (غير مقيدة بساكن)، إذ ينتهي كل بيت بحرف الراء متبوعاً بحركة الضم التي تشبع أحياناً إلى واو (كما في "سخرُ"، "حذرُ"، "معتمرُ"، "مضرُ"). الدليل النصي على الإطلاق هو تكرار هذا النمط الصرفي-الصوتي بلا استثناء عبر الأبيات الثمانية والعشرين كافة، وهو نمط قافية شائع في القصائد الطويلة (الرثائية والمديحية) لأنه يمنح مرونة صرفية واسعة في اختيار الكلمة الأخيرة من كل بيت (اسم مفرد مرفوع في الغالب).</p>
+    <div class="item-box box-purple">
+      <span class="item-term">المخرج الصوتي لحرف الراء</span>
+      حرف لثوي (أو حافّة اللسان)، مجهور، تكراري (بحيث يهتز طرف اللسان عند نطقه مرتين أو أكثر)، وهو من الأصوات المتوسطة بين الشدة والرخاوة (بينهما). هذه الصفة "التكرارية" الفريدة تمنحه رنيناً مستمراً يتردد صداه بعد انتهاء النطق مباشرة.
+    </div>
+    <p>يخدم هذا الاختيار الصوتي طبيعة القصيدة الرثائية بشكل ملحوظ: فالتكرار الذاتي لحرف الراء (اهتزازة اللسان المتكررة) يحاكي صوتياً تكرار النَّدب والبكاء الذي هو جوهر فعل الرثاء نفسه، بينما يمنح جهر الحرف (اهتزاز الوترين الصوتيين) القصيدة قوة صوتية ورنيناً لا يناسب الهمس الخافت بل الإعلان الصريح عن المصيبة والاتهام معاً (كما في بيت الخيانة الصريح).</p>
+    <h3>التصريع: فحص البيت الأول</h3>
+    <p class="verse-cite">إنِّي أتتني لسانٌ لا أسرُّ بها ... من علوُ لا عجبٌ منها ولا سخرُ</p>
+    <div class="method-note">
+      <strong>نتيجة الفحص:</strong> البيت الأول غير مصرَّع. التصريع يقتضي أن تنتهي عروض الشطر الأول (صدر البيت) بنفس روي وقافية ضرب الشطر الثاني (عجز البيت). هنا ينتهي الشطر الأول بكلمة "بها" (التي تنتهي بهاء مكسورة أو ساكنة، لا براء مضمومة)، بينما ينتهي الشطر الثاني بـ"سخرُ" (راء مضمومة، وهي الروي المعتمد في كامل القصيدة). عدم التطابق بين "بها" و"سخرُ" دليل نصي قاطع على انتفاء التصريع في مطلع هذه القصيدة، وهو أمر شائع في القصائد الطويلة التي لا تُلزم نفسها بتقليد التصريع الاستهلالي المعروف في بعض المطالع الجاهلية الأخرى.
+    </div>
+  </div>
+
+  <!-- ========== MODULE 6 ========== -->
+  <div id="m6" class="module">
+    <div class="module-eyebrow"><span class="n">٦</span> المرحلة السادسة</div>
+    <h2>اللسانيات النصية والتداولية</h2>
+    <div class="module-sub">الاتساق والانسجام وأفعال الكلام والاستلزام الحواري والبعد الحجاجي</div>
+    <h3>أ) الاتساق (Cohesion)</h3>
+    <div class="item-box box-blue">
+      <span class="item-term">الإحالة الضميرية المتصلة عبر القصيدة (الهاء العائدة على المرثيّ)</span>
+      يعتمد النص على سلسلة طويلة من ضمائر الغيبة المتصلة (جفنتهُ، ضربتهُ، شربهُ، شرسوفهِ...) التي تعود جميعها على المرثيّ الغائب، فتخلق خيطاً إحالياً متصلاً يربط الأبيات المتعددة (٦-٢٢) بمرجع واحد ثابت رغم توالي الصفات المختلفة الموصوفة به.
+    </div>
+    <h3>ب) الانسجام (Coherence)</h3>
+    <div class="item-box box-blue">
+      <span class="item-term">التغريض</span>
+      رغم أن القصيدة أحادية الغرض ظاهرياً (رثاء)، إلا أن غرضها الفعلي الحاكم مركّب من عنصرين متلازمين: المديح (إثبات الكمال) والاتهام (تحديد سبب الفقد)؛ وهذا الغرض المزدوج هو الخيط الذي يفسر التنقل الظاهري بين المديح المحض (الأبيات ٦-١٨) والسرد الاتهامي (١٩-٢٤) دون أن يُحدث ذلك تفككاً بنيوياً، لأن الغرضين يخدمان معاً هدفاً واحداً: تعظيم الخسارة عبر تعظيم سببها الخارجي.
+    </div>
+    <h3>ج) المستوى التداولي: أفعال الكلام</h3>
+    <table class="data-table">
+      <tr><th>فعل الكلام</th><th>الموضع</th><th>الوظيفة التداولية</th></tr>
+      <tr><td>إخباري (توكيدي)</td><td><span class="vchip">١</span></td><td>الإعلان عن تلقي خبر مؤلم، يفتتح الإطار العام للقصيدة</td></tr>
+      <tr><td>وصفي-تعديدي</td><td><span class="vchip">٦-١٨</span></td><td>سرد المناقب بصيغة الحقيقة الثابتة المعروفة (لا حاجة للإثبات، بل للتذكير)</td></tr>
+      <tr><td>إخباري-اتهامي</td><td><span class="vchip">٢٤</span></td><td>تحديد المسؤولية عن الحادثة بصيغة قاطعة (تسمية الجهة الخائنة)</td></tr>
+      <tr><td>إنشائي-تهديدي/دعائي</td><td><span class="vchip">٢٥</span></td><td>مخاطبة القاتل مباشرة بعبارة تحمل دلالة الدعاء عليه بعدم الهناء</td></tr>
+      <tr><td>حِكَمي-ختامي</td><td><span class="vchip">٢٨</span></td><td>صياغة موقف قيمي جماعي يُنهي القصيدة بإطار تأملي يتجاوز الحدث المفرد</td></tr>
+    </table>
+    <h3>د) الاستلزام الحواري</h3>
+    <div class="item-box box-purple">
+      <span class="item-term">البيت الثاني: "كنتُ أحذره لو ينفعُ الحذرُ"</span>
+      المعنى الضمني المستنتَج من هذا التصريح هو أن الشاعر كان يعلم بوجود خطر محدق (ربما من جهة نفيل تحديداً)، وأن هذا العلم المسبق لم يمنع الحادثة؛ وهذا يستلزم حوارياً أن السبب الحقيقي للفقد لم يكن غفلة أو تفريطاً من المرثيّ نفسه، بل عاملاً خارج نطاق قدرته على التحكم، وهو ما يتأكد صراحة لاحقاً في بيت الخيانة.
+    </div>
+    <h3>هـ) البعد الحجاجي-الإقناعي</h3>
+    <ol>
+      <li><strong>استراتيجية التراكم قبل الانكسار:</strong> بناء صورة متكاملة من الفضائل عبر ثلاثة عشر بيتاً متصلاً (٦-١٨) قبل الإعلان عن الفقد صراحة، بحيث يكون وقع الخسارة على القارئ متناسباً مع حجم الصورة المتراكمة، وهي استراتيجية إقناعية تراكمية تراهن على تعظيم الأثر عبر التمهيد الطويل.</li>
+      <li><strong>استراتيجية تبرئة الفقيد عبر تحميل المسؤولية لطرف ثالث:</strong> عبر أسلوب الشرط الامتناعي في البيت ٢٤ ("لو لم تخنه نفيل")، يبني الشاعر حجة منطقية مفادها أن الهزيمة لم تكن نتيجة ضعف أو تقصير في الممدوح، بل نتيجة حصرية لعامل خارجي هو الخيانة، فيحصّن بذلك صورة الكمال التي بناها طوال القصيدة من أي شبهة تنقيص.</li>
+      <li><strong>استراتيجية التوازن الختامي بين الجزع والصبر:</strong> بدل فرض موقف عاطفي واحد قسراً على المتلقي، يعرض البيت الأخير خيارين مشروعين معاً (الجزع أو الصبر)، وهي استراتيجية إقناعية تكسب مصداقية أكبر عبر الاعتراف بمشروعية الألم بدل التظاهر بصبر مطلق مصطنع.</li>
+    </ol>
+  </div>
+
+  <!-- ========== MODULE 7 ========== -->
+  <div id="m7" class="module">
+    <div class="module-eyebrow"><span class="n">٧</span> المرحلة الخامسة — الرموز والتناص</div>
+    <h2>التناص المصنَّف ومفهوم القناع الفني</h2>
+    <div class="module-sub">تصنيف علاقات التناص حسب تقنياتها<span class="rule-badge">Rule 10</span></div>
+    <h3>القناع الفني</h3>
+    <p>لا يوجد في متن القصيدة دليل نصي واضح على استخدام "قناع فني" (تحدث الشاعر عن ذاته عبر رمز أو شخصية مستحضرة من خارج سياق الحادثة المباشرة). الشاعر يتحدث بصوته المباشر الأول (إنّي، أندبه، كنتُ أحذره) عن حادثة واقعية محددة (رثاء أخيه لأمه)، دون توسط رمزي أو أسطوري أو تاريخي. لذا يُصرَّح بغياب هذه التقنية في هذا النص بدل افتراضها.</p>
+    <div class="method-note">
+      <strong>ملاحظة منهجية:</strong> التذكير بأن أي ربط بين صوت المتكلم الشعري وذات الشاعر التاريخي يبقى احتمالاً تأويلياً يستند إلى السياق الخارجي (معرفتنا بأن الشاعر يرثي أخاه فعلاً)، لا يقيناً نصياً محضاً؛ لكن في حالة هذه القصيدة تحديداً، يبدو التطابق بين صوت المتكلم والشاعر التاريخي مدعوماً بقوة بالمعلومات السياقية المتوفرة (اسم المرثيّ، ظروف مقتله، ذكر القبيلة الخائنة)، فالفجوة التأويلية هنا ضيقة نسبياً مقارنة بنصوص أخرى أكثر رمزية.
+    </div>
+    <h3>تصنيف علاقات التناص</h3>
+    <div class="item-box box-gold">
+      <span class="item-term">تناص ضمني-تصويري مع الصورة القرآنية لـ"الكوكب الدرّي" (البيت ١٨)</span>
+      يستدعي الشاعر في تشبيهه "كالكوكب الدريّ" تعبيراً يحمل صدى لغوياً معروفاً من التراث الوصفي العربي لوصف شدة الإضاءة والسطوع (وهو تعبير ورد لاحقاً بصيغة مشابهة في النص القرآني)؛ لكن نظراً لكون هذه القصيدة منسوبة إلى العصر الجاهلي (قبل نزول القرآن)، فإن العلاقة الدقيقة بين الصيغتين (أيهما أسبق أو أصل للتعبير في الاستخدام اللغوي العام) تبقى مسألة تستدعي تحقيقاً تاريخياً-لغوياً متخصصاً خارج نطاق هذا التحليل، ولا يُحسم هنا بشكل قاطع أي الاستخدامين استقى من الآخر أو ما إذا كان التعبير شائعاً في المعجم الوصفي العربي قبل الإسلام أصلاً.
+    </div>
+    <p>باستثناء هذا التقاطع التعبيري المحتمل، لا يوجد في القصيدة اقتباس مباشر مؤكَّد من نص سابق معروف، فيُصرَّح بغياب أي تناص اقتباسي قاطع الدليل في بقية أبيات القصيدة.</p>
+  </div>
+
+  <!-- ========== MODULE 8 ========== -->
+  <div id="m8" class="module">
+    <div class="module-eyebrow"><span class="n">٨</span> المرحلة السابعة — بحذر ومؤشرات نصية فقط</div>
+    <h2>البنية النفسية: جدلية الوعي واللاوعي في النص</h2>
+    <div class="module-sub">وصف الحالة كما تنعكس في نسيج النص، لا تشخيص نفسي للشاعر التاريخي<span class="rule-badge">Rule 9، 21</span></div>
+    <div class="method-note">
+      <strong>تنبيه منهجي إلزامي قبل الشروع:</strong> ما يلي وصف لِما تنعكسه بنية النص، لا تشخيص نفسي لشخص الشاعر التاريخي؛ الصوت المتكلم لا يُفترَض تطابقه التام مع الشاعر إلا بقرينة سياقية واضحة، وإن كانت القرائن السياقية هنا (كما ذُكر في القسم السابع) تدعم هذا التطابق بدرجة معقولة نظراً لواقعية الحادثة الموصوفة.
+    </div>
+    <h3>مؤشرات نصية على انقسام الذات المتكلمة</h3>
+    <div class="item-box box-purple">
+      <span class="item-term">التوتر بين المعرفة المسبقة والعجز (البيت ٢: "كنتُ أحذره لو ينفعُ الحذرُ")</span>
+      يعكس هذا التركيب توتراً نصياً بين موقعين متعارضين للذات المتكلمة: ذات "عارفة" كانت تتوقع الخطر، وذات "عاجزة" لم تستطع منعه؛ هذا الانشطار الوظيفي (لا النفسي بالضرورة) بين المعرفة والفعل هو مؤشر نصي بنيوي يتكرر صداه لاحقاً في بيت الخيانة (٢٤)، حيث يتأكد أن مصدر الخطر لم يكن خارج دائرة توقع الشاعر تماماً، لكنه كان خارج دائرة قدرته على التدخل.
+    </div>
+    <div class="item-box box-purple">
+      <span class="item-term">ازدواج البِشر واليأس في تركيب واحد (البيت ٢٣)</span>
+      يمثل هذا البيت الغامض تركيبياً (كما نوقش في القسم الأول من التحليل بيتاً بيتاً) انعكاساً نصياً لحالة تردد أو تعقيد وجداني يسبق مباشرة لحظة الكشف عن الخيانة، وإن كان هذا التفسير يبقى احتمالاً تأويلياً بحكم صعوبة حسم دلالة البيت بيقين تام.
+    </div>
+    <h3>الثنائيات الضدية الكبرى في النص</h3>
+    <div class="item-box box-teal">
+      <span class="item-term">ثنائية الكمال/الانكسار</span>
+      تتشكل عبر البناء التراكمي الطويل لصورة الفتى الكامل (الأبيات ٦-١٨) مقابل صورة الرمح المنكسر رغم صلابته (البيت ١٩)؛ هذه الثنائية هي المحرك البنيوي الأساسي للقصيدة كلها، إذ تُبنى الأولى لتُهدم الثانية فجأة، محدثة الأثر التراجيدي المقصود.
+    </div>
+    <div class="item-box box-teal">
+      <span class="item-term">ثنائية الحذر/القدر</span>
+      تتشكل عبر التقابل بين "كنتُ أحذره" (البيت ٢) و"لم تخنهُ نفيلٌ" (البيت ٢٤)، فتطرح القصيدة ضمنياً سؤالاً فلسفياً عن حدود قدرة الإنسان على درء القدر حتى مع سبق العلم بالخطر.
+    </div>
+    <div class="item-box box-teal">
+      <span class="item-term">ثنائية الجزع/الصبر في الخاتمة</span>
+      تُغلق القصيدة بثنائية صريحة معلنة (البيت ٢٨) لا تحسم لصالح أحد طرفيها حسماً قاطعاً، تاركة الموقف الوجداني الختامي مفتوحاً على الاحتمالين معاً، بخلاف ثنائيتي الكمال/الانكسار والحذر/القدر اللتين تُحلّان ضمنياً باتجاه واحد (الكمال ينكسر، الحذر يُهزم أمام القدر).
+    </div>
+  </div>
+
+  <!-- ========== MODULE 9 ========== -->
+  <div id="m9" class="module">
+    <div class="module-eyebrow"><span class="n">٩</span> ختام الملحق — Rule 30</div>
+    <h2>آفاق بحثية مستقبلية</h2>
+    <div class="module-sub">جوانب تستحق معالجة مستقلة في دراسات لاحقة</div>
+    <ul>
+      <li><strong>تحقيق تاريخي في هوية "هند بن أسماء" وحادثة بني نفيل:</strong> يستحق تتبع المصادر التاريخية والأنساب القبلية (كطبقات الشعراء، وكتب الأنساب الجاهلية) دراسة مستقلة لتحديد هوية القاتل المخاطَب في البيت الخامس والعشرين بدقة أكبر، وتوثيق تفاصيل حادثة المواجهة بين باهلة وبني نفيل.</li>
+      <li><strong>دراسة مقارنة مع مراثي جاهلية أخرى في نفس البحر والروي:</strong> مقارنة هذه القصيدة بمراثٍ جاهلية أخرى منظومة على البسيط بقافية رائية (كبعض مراثي الخنساء أو متمم بن نويرة) لتحديد ما إذا كانت بنية "التراكم ثم الانكسار" سمة أسلوبية عامة في المرثية الجاهلية أم خصوصية فردية لدى أعشى باهلة.</li>
+      <li><strong>دراسة تلقٍّ حول تاريخ تدوين القصيدة ورواياتها المختلفة:</strong> يستحق تتبع المصادر المخطوطة (كمختارات ابن الشجري، وخزانة الأدب للبغدادي) دراسة نقدية-نصية لرصد الفروق بين الروايات المختلفة لبعض الألفاظ (كما أشير إليه في شرح البيت السادس عشر بخصوص رواية بديلة لـ"لا يصعب الأمر")، وأثر هذه الفروق على التأويل.</li>
+      <li><strong>تحليل دلالي متعمق للمعتقدات الشعبية الجاهلية الموظفة في النص (حية الصفر):</strong> يستحق استقصاء أوسع في كتب الأمثال والمعتقدات الجاهلية (كالحيوان للجاحظ) لفهم خلفية معتقد "حية الصفر" المذكور في البيت الرابع عشر ودوره في المخيال الثقافي الجاهلي حول الجوع والمرض.</li>
+    </ul>
+  </div>
+
+  <div class="appendix-divider"><span>✦ نهاية الملحق التحليلي المكمّل ✦</span></div>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- الخلاصة الشاملة والمصادر -->
+<!-- ============================================================ -->
+<div id="khatimah" class="summary-section">
+  <h2>✦ الخلاصة الشاملة والمصادر ✦</h2>
+  <div class="summary-content">
+
+    <h3 style="color:var(--gold-light); font-family:'Amiri',serif; font-size:20px; margin-bottom:16px;">مسار الحركات الفنية للقصيدة</h3>
+    <div class="evolution-step">
+      <div class="evolution-badge">١ - ٥</div>
+      <div class="evolution-text"><strong>لحظة النبأ:</strong> افتتاحية سردية-مشهدية تصوّر تلقي خبر الوفاة عبر راكب قادم من تثليث، وتؤسس نبرة الجدّية منذ البيت الأول.</div>
+    </div>
+    <div class="evolution-step">
+      <div class="evolution-badge">٦ - ١٤</div>
+      <div class="evolution-text"><strong>تعداد المناقب — الكرم والقناعة:</strong> الحركة المركزية الأطول، تبني صورة الجود المستمر حتى في الجدب، مقروناً بصفة القناعة الشخصية.</div>
+    </div>
+    <div class="evolution-step">
+      <div class="evolution-badge">١٥ - ١٨</div>
+      <div class="evolution-text"><strong>الفروسية والهيئة الجسدية:</strong> تنتقل إلى الصلابة البدنية والرشاقة، وتبلغ ذروتها في تشبيه الممدوح بالكوكب الدرّي الهادي وسط الظلام.</div>
+    </div>
+    <div class="evolution-step">
+      <div class="evolution-badge">١٩ - ٢٤</div>
+      <div class="evolution-text"><strong>الانكسار وكشف الخيانة:</strong> انعطاف حاد عبر استعارة الرمح المنكسر، ثم عودة موجزة للمديح القتالي، وصولاً إلى الذروة الدرامية في تسمية الخيانة صراحة.</div>
+    </div>
+    <div class="evolution-step">
+      <div class="evolution-badge">٢٥ - ٢٨</div>
+      <div class="evolution-text"><strong>المواجهة والتعزية الختامية:</strong> مخاطبة مباشرة للقاتل، عودة لصورة الضياء، ثم خاتمة حكمية تعلن مشروعية الجزع والصبر معاً.</div>
+    </div>
+
+    <div class="summary-paragraph">
+      <h3>الوحدة العضوية للقصيدة</h3>
+      <p>
+        تُظهر القراءة المنهجية أن القصيدة تتمتع بوحدة عضوية محكمة رغم طولها (٢٨ بيتاً) وتعدد مقاطعها الوصفية؛ فكل حركة فنية تخدم البنية الحجاجية الكلية التي أُشير إليها في فرضية القراءة (الملحق، القسم الأول): بناء صورة الكمال (الحركتان الثانية والثالثة) لتُهدَم بفعل خارجي واحد (الحركة الرابعة)، ثم تُعالَج نفسياً وجماعياً (الحركة الخامسة). لا يمكن حذف أي حركة من هذه الحركات الخمس دون خلل بالدلالة الكلية: حذف حركة المديح (٦-١٨) يُفقد لحظة الانكسار (١٩) ثقلها التراجيدي، وحذف حركة الخيانة (١٩-٢٤) يترك سبب الفقد مجهولاً ويحوّل القصيدة إلى رثاء عام دون خصوصية توثيقية، وحذف الخاتمة (٢٥-٢٨) يترك القصيدة معلّقة دون حل وجداني أو موقف ختامي. الشاهد النصي على هذا الترابط يتجلى في الروابط الداخلية المتكررة عبر القصيدة (كتكرار صورة "منصلتاً" في البيتين ١٠ و١٨، وتكرار صورة الضياء في البيتين ١٨ و٢٦)، والتي تُحكم النسيج البنيوي للنص وتمنعه من التفكك إلى وحدات مستقلة.
+      </p>
+    </div>
+
+    <div class="summary-paragraph">
+      <h3>الموسيقى العامة والبناء الصوتي</h3>
+      <p>
+        تنظم القصيدة على بحر البسيط بقافية رائية مطلقة، وهو اختيار عروضي يناسب طولها ويمنحها مرونة صرفية واسعة في اختيار قوافي الأبيات (أسماء مفردة مرفوعة في الغالب). حرف الروي (الراء المجهورة التكرارية) يخدم موضوع الرثاء بخاصية صوتية أصيلة: تكراره الذاتي (اهتزازة اللسان) يوازي إيقاع الندب المتكرر، بينما جهره يمنح القصيدة قوة إعلانية تناسب لحظة الاتهام الصريح في البيت الرابع والعشرين. لم يثبت التصريع في البيت الأول (كما فُصِّل في الملحق، القسم الخامس)، وهو أمر متوقع في القصائد الطويلة غير المُلزِمة نفسها بهذا التقليد الاستهلالي. أما على مستوى الإيقاع الداخلي، فقد تكرر التوازي التركيبي (كالتوازي الشرطي في الخاتمة) والجناس الاشتقاقي (كدر/يكدره، خان/خائنة) كأدوات موسيقية-دلالية مزدوجة الوظيفة عبر القصيدة.
+      </p>
+    </div>
+
+    <div class="summary-paragraph">
+      <h3>القيمة التاريخية والأدبية الجامعة</h3>
+      <p>
+        تكمن القيمة الأدبية لهذه القصيدة في جمعها البارع بين قالب المرثية التقليدية (تعداد المناقب بأسلوب تراكمي معروف في المرثية الجاهلية) وبين الخصوصية التوثيقية الحادة (تسمية الجهة الخائنة صراحة في البيت ٢٤، ومخاطبة القاتل باسمه في البيت ٢٥)، وهو ما يمنحها بعداً يتجاوز الرثاء العاطفي المجرد إلى وثيقة قبلية-تاريخية. من نقاط القوة الفنية البارزة: الإحكام البنيوي (كما فُصِّل أعلاه في فقرة الوحدة العضوية)، والتنويع الإيقاعي بين مقاطع الحركة السريعة (الأبيات الأولى) والوصف الهادئ (بيت الرشاقة الجسدية) والحدة الانفعالية (بيت المخاطبة المباشرة)، إضافة إلى الاستعارة التمثيلية الفلسفية العميقة في بيت الرمح المنكسر. أما من جوانب الإشكال التأويلي، فيبقى البيت الثالث والعشرون (اليأس/البشر) موضع غموض تركيبي لم يُحسم في هذا التحليل بيقين قاطع، وهو ما يستدعي حذراً منهجياً عند الاستشهاد بهذا البيت تحديداً في أي قراءة لاحقة. بحسب المصادر المتاحة، تُعد هذه الرائية أشهر ما وصل من شعر أعشى باهلة، وقد أوردها البغدادي بتمامها في خزانة الأدب، مما يرسّخ مكانتها في التراث النقدي العربي كنموذج مكتمل لبنية المرثية الجاهلية الطويلة.
+      </p>
+    </div>
+
+    <div class="summary-paragraph">
+      <h3>المصادر والمراجع</h3>
+      <ul class="biblio-list">
+        <li>نص القصيدة كما ورد في مصدر مرفق من المستخدم (نسخة تحمل ترقيم صفحات ٩-١٠)، منسوبة إلى مختارات ابن الشجري في شعراء العرب، مع شروح لغوية مصاحبة للنص (شرح "اخروّط"، "يتأرى"، "لا يصعب الأمر").</li>
+        <li>البغدادي، عبد القادر بن عمر، خزانة الأدب ولب لباب لسان العرب — أشارت مصادر مرجعية عامة (كموسوعة المعرفة وبوابة الشعراء) إلى أن البغدادي أورد هذه الرائية بتمامها، دون أن تتوفر لدى هذا التحليل نسخة مباشرة من الخزانة للتحقق من رقم الصفحة أو الجزء بدقة؛ فيُصرَّح بغياب هذا التوثيق الدقيق بدل اختلاقه.</li>
+        <li>ملحوظة منهجية: التفاصيل التاريخية المتعلقة بحادثة مقتل المنتشر بن وهب على يد بني نفيل بن عمرو بن كلاب (تاريخ الحادثة، مكانها، ظروفها الكاملة) غير موثقة بدقة كافية في المصادر المتاحة لهذا التحليل خارج ما تضمنه متن القصيدة نفسه ومقدمتها الموجزة؛ كما أن هوية "هند بن أسماء" المذكور في البيت الخامس والعشرين غير موثقة بتفصيل إضافي متاح. يُصرَّح بغياب هذا التوثيق بدل اختلاق تفاصيل غير متحقق منها.</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  تحليل أكاديمي أُعِدّ بعناية لخدمة البحث العلمي في الأدب العربي. جميع الاجتهادات التأويلية والنحوية قابلة للمراجعة والتدقيق العلمي.
+</footer>
+
+<script>
+  function toggleVerse(id) {
+    const card = document.getElementById(id);
+    card.classList.toggle('open');
+  }
+  function expandAll() {
+    document.querySelectorAll('.verse-card').forEach(card => card.classList.add('open'));
+  }
+  function collapseAll() {
+    document.querySelectorAll('.verse-card').forEach(card => card.classList.remove('open'));
+  }
+  document.querySelectorAll('.nav-map a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({behavior:'smooth'});
+    });
+  });
+</script>
+
+</body>
+</html>
